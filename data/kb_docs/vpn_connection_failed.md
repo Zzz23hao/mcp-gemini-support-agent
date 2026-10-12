@@ -10,10 +10,11 @@ VPN connection failures may prevent users from reaching internal systems and dev
 
 ## Troubleshooting Steps
 1. Confirm the user has internet access.
-2. Ask the user to restart the VPN client.
-3. Verify MFA enrollment and SSO login.
-4. Check the VPN service status page.
-5. Reinstall the VPN profile if the client reports configuration errors.
+2. Confirm the user is using valid VPN credentials or SSO credentials.
+3. Ask the user to restart the VPN client.
+4. Verify MFA enrollment and SSO login.
+5. Check the VPN service status page.
+6. Reinstall the VPN profile if the client reports configuration errors.
 
 ## Common Errors
 - Authentication failed

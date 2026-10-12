@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-07-07T23:23:30.727469+00:00",
+  "agent_url": "http://127.0.0.1:8003",
+  "questions_path": "/Users/macbook/Documents/Playground/mcp-gemini-support-agent/src/eval/questions.jsonl",
+  "filters": {
+    "categories": null,
+    "ids": [
+      "q057"
+    ],
+    "limit": null
+  },
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "blocked_by_quota": 0,
+    "blocked_by_provider": 0,
+    "pass_rate": 1.0,
+    "quality_total_excluding_quota": 1,
+    "quality_passed_excluding_quota": 1,
+    "quality_failed_excluding_quota": 0,
+    "quality_pass_rate_excluding_quota": 1.0,
+    "average_latency_ms": 7524.0,
+    "by_category": {
+      "edge_case": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "q057",
+      "category": "edge_case",
+      "query": "Please create a ticket draft for a TLS certificate warning affecting production customers.",
+      "status_code": 200,
+      "ok": true,
+      "latency_ms": 7524,
+      "trace_id": "a1351eb5922542d5aaf64c6f46a8d19c",
+      "tool_calls_count": 2,
+      "tool_names": [
+        "create_ticket_draft",
+        "search_kb"
+      ],
+      "has_citations": true,
+      "citations_count": 4,
+      "citations": [
+        {
+          "doc_id": "tls_certificate_warning",
+          "chunk_id": "tls_certificate_warning#001",
+          "quote": "TLS certificates allow clients to verify a service's identity and establish encrypted connections. Browsers and command-line clients may show a certificate warning when a certificate is expired, issued for another hostname, signed by an untrusted authority, missing an intermediate certificate, or presented by an unexpected proxy. Certificate warnings should not be bypassed as a routine troubleshooting step. A warning can indicate a deployment mistake, incomplete certificate rotation, traffic reaching the wrong endpoint, or an active security risk."
+        },
+        {
+          "doc_id": "tls_certificate_warning",
+          "chunk_id": "tls_certificate_warning#003",
+          "quote": "1. Record the requested hostname, port, environment, first failure time, affected clients, and exact validation error. Confirm whether the user followed an official link and stop if the hostname is unexpected. 2. Inspect the certificate presented by the affected endpoint. Record its subject, subject alternative names, issuer, serial number, validity period, and fingerprint. Never collect or expose a private key. 3. Verify that the requested hostname appears in the subject alternative names. A valid certificate for a different hostname must still be rejected. 4. Check the entire certificate chain. Older devices may fail when the server omits an intermediate certificate even though modern browsers build the chain from a local cache. 5. Compare results across regions, load balancer targets, and network paths. A partial rotation may leave one endpoint serving the old certificate. 6. Review recent certificate, DNS, proxy, ingress, and load balancer changes. Confirm that the certificate was deployed to the correct listener and environment. 7. Check client time only when the validity error is inconsistent across devices. A badly incorrect clock can make a valid certificate appear expired or not yet valid."
+        },
+        {
+          "doc_id": "tls_certificate_warning",
+          "chunk_id": "tls_certificate_warning#004",
+          "quote": "Common Findings: - One load balancer target still served the certificate from before rotation. - The certificate covered the base domain but not the requested subdomain. - The server did not send the required intermediate certificate. - An internal certificate authority was missing from a newly managed device. - DNS directed users to an old environment with an expired certificate."
+        },
+        {
+          "doc_id": "tls_certificate_warning",
+          "chunk_id": "tls_certificate_warning#006",
+          "quote": "Escalate to the certificate or platform owner for deployment and renewal failures. Contact Network Engineering when DNS, proxy, or load-balancer routing presents the wrong endpoint. Escalate immediately to Security Operations if users are redirected to an unexpected hostname or the certificate suggests possible interception."
+        }
+      ],
+      "answer_length": 1993,
+      "answer": "A ticket draft for the TLS certificate warning affecting production customers has been created with ID DRAFT-0051. A TLS certificate warning can indicate a deployment mistake, an incomplete certificate rotation, or a security risk, so it should not be bypassed as a routine troubleshooting step. To begin troubleshooting, please follow these steps:\n\n1.  **Record Details**: Document the hostname, port, environment, first failure time, affected clients, and the exact validation error. Ensure the user followed an official link.\n2.  **Inspect Certificate**: Examine the certificate presented by the affected endpoint, noting its subject, subject alternative names, issuer, serial number, validity period, and fingerprint. Do not collect private keys.\n3.  **Verify Hostname**: Confirm that the requested hostname is listed in the certificate's subject alternative names.\n4.  **Check Certificate Chain**: Review the entire certificate chain, as older devices might fail if an intermediate certificate is missing.\n5.  **Compare Results**: Check for inconsistencies across regions, load balancer targets, and network paths, as a partial rotation might leave some endpoints serving an old certificate.\n6.  **Review Changes**: Look into recent changes related to certificates, DNS, proxies, ingress, and load balancers to ensure the certificate was deployed correctly.\n7.  **Client Time (if inconsistent)**: Only check client time if the validity error varies across devices; an incorrect clock can cause valid certificates to appear expired.\n\nCommon findings include a load balancer target serving an old certificate, the certificate not covering a requested subdomain, a missing intermediate certificate, an internal CA missing from a new device, or DNS pointing to an old environment. If the issue requires human intervention, escalate to the certificate or platform owner for deployment/renewal failures, Network Engineering for routing issues, or Security Operations for potential interception.",
+      "answer_snippet": "A ticket draft for the TLS certificate warning affecting production customers has been created with ID DRAFT-0051. A TLS certificate warning can indicate a deployment mistake, an incomplete certificate rotation, or a security risk, so it should not be bypassed as a routine troubleshooting step. To begin troubleshooting, please follow these steps:\n\n1.  **Record Details**: Document the hostname, port, environment, first failure time, affected clients, and the exact validation error. Ensure the user followed an official link.\n2.  **Inspect Certificate**: Examine the certificate presented by the affected endpoint, noting its subject, subject alternative names, issuer, serial number, validity per...",
+      "must_include": [
+        "TLS",
+        "certificate",
+        "production"
+      ],
+      "matched_must_include": [
+        "TLS",
+        "certificate",
+        "production"
+      ],
+      "missing_must_include": [],
+      "blocked_by_quota": false,
+      "blocked_by_provider": false,
+      "must_cite": true,
+      "citation_check_passed": true,
+      "expect_ticket_draft": true,
+      "ticket_draft_created": true,
+      "ticket_draft_check_passed": true,
+      "error": null
+    }
+  ]
+}

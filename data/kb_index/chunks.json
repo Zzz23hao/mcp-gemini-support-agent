@@ -1,0 +1,1508 @@
+[
+  {
+    "doc_id": "account_lockout",
+    "chunk_id": "account_lockout#001",
+    "heading": "Background",
+    "text": "Users may be locked out after repeated failed sign-in attempts or suspicious authentication activity."
+  },
+  {
+    "doc_id": "account_lockout",
+    "chunk_id": "account_lockout#002",
+    "heading": "Symptoms",
+    "text": "- The user sees an account locked message.\n- Password reset does not immediately restore access.\n- Sign-in attempts fail across multiple applications."
+  },
+  {
+    "doc_id": "account_lockout",
+    "chunk_id": "account_lockout#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the user's corporate email address.\n2. Check the identity console for lockout status.\n3. Verify whether the lockout was caused by failed password attempts or security policy.\n4. Ask the user to reset the password if required.\n5. Unlock the account after confirming the user's identity."
+  },
+  {
+    "doc_id": "account_lockout",
+    "chunk_id": "account_lockout#004",
+    "heading": "Common Errors",
+    "text": "- Account temporarily locked\n- Too many failed attempts\n- Risk-based sign-in blocked"
+  },
+  {
+    "doc_id": "account_lockout",
+    "chunk_id": "account_lockout#005",
+    "heading": "Escalation",
+    "text": "Escalate to identity security if the lockout was triggered by suspicious activity or impossible travel."
+  },
+  {
+    "doc_id": "account_lockout",
+    "chunk_id": "account_lockout#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1001\n- TCK-1002"
+  },
+  {
+    "doc_id": "api_key_rotation",
+    "chunk_id": "api_key_rotation#001",
+    "heading": "Background",
+    "text": "API keys must be rotated when they expire, are exposed, or are no longer owned by the correct service account."
+  },
+  {
+    "doc_id": "api_key_rotation",
+    "chunk_id": "api_key_rotation#002",
+    "heading": "Symptoms",
+    "text": "- Service requests return unauthorized errors.\n- A deployment fails after secret rotation.\n- Security reports an exposed API key."
+  },
+  {
+    "doc_id": "api_key_rotation",
+    "chunk_id": "api_key_rotation#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Identify the application and environment using the key.\n2. Create a new key under the approved service account.\n3. Store the new key in the secrets manager.\n4. Redeploy the service using the updated secret reference.\n5. Revoke the old key after confirming traffic is healthy."
+  },
+  {
+    "doc_id": "api_key_rotation",
+    "chunk_id": "api_key_rotation#004",
+    "heading": "Common Errors",
+    "text": "- 401 unauthorized\n- Invalid API key\n- Secret version not found"
+  },
+  {
+    "doc_id": "api_key_rotation",
+    "chunk_id": "api_key_rotation#005",
+    "heading": "Escalation",
+    "text": "Escalate to the platform security team if the key was committed to a public repository."
+  },
+  {
+    "doc_id": "api_key_rotation",
+    "chunk_id": "api_key_rotation#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1003\n- TCK-1004"
+  },
+  {
+    "doc_id": "aws_account_access",
+    "chunk_id": "aws_account_access#001",
+    "heading": "Background",
+    "text": "Employees need approved access to AWS accounts based on role, team, and environment."
+  },
+  {
+    "doc_id": "aws_account_access",
+    "chunk_id": "aws_account_access#002",
+    "heading": "Symptoms",
+    "text": "- The user cannot assume an AWS role.\n- The AWS console shows access denied.\n- CLI commands fail even after SSO login."
+  },
+  {
+    "doc_id": "aws_account_access",
+    "chunk_id": "aws_account_access#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the target AWS account ID and environment.\n2. Verify the user belongs to the correct identity group.\n3. Ask the user to refresh AWS SSO credentials.\n4. Check whether the role trust policy allows the identity group.\n5. Confirm the requested permission level matches the access policy."
+  },
+  {
+    "doc_id": "aws_account_access",
+    "chunk_id": "aws_account_access#004",
+    "heading": "Common Errors",
+    "text": "- AccessDenied\n- User is not authorized to perform sts:AssumeRole\n- SSO session expired"
+  },
+  {
+    "doc_id": "aws_account_access",
+    "chunk_id": "aws_account_access#005",
+    "heading": "Escalation",
+    "text": "Escalate to cloud platform if the role trust policy or permission set is missing."
+  },
+  {
+    "doc_id": "aws_account_access",
+    "chunk_id": "aws_account_access#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1005\n- TCK-1006"
+  },
+  {
+    "doc_id": "browser_cache_issue",
+    "chunk_id": "browser_cache_issue#001",
+    "heading": "Background",
+    "text": "Stale browser cache and cookies can break authentication, admin portals, and internal web applications."
+  },
+  {
+    "doc_id": "browser_cache_issue",
+    "chunk_id": "browser_cache_issue#002",
+    "heading": "Symptoms",
+    "text": "- The page loops back to login.\n- The user sees outdated UI or missing permissions.\n- A web app fails in one browser but works in another."
+  },
+  {
+    "doc_id": "browser_cache_issue",
+    "chunk_id": "browser_cache_issue#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Ask the user to try an incognito window.\n2. Clear cookies and cached data for the affected domain.\n3. Disable browser extensions temporarily.\n4. Retry sign-in after closing all browser windows.\n5. Test the same workflow in another supported browser."
+  },
+  {
+    "doc_id": "browser_cache_issue",
+    "chunk_id": "browser_cache_issue#004",
+    "heading": "Common Errors",
+    "text": "- Login loop\n- CSRF token mismatch\n- Session expired"
+  },
+  {
+    "doc_id": "browser_cache_issue",
+    "chunk_id": "browser_cache_issue#005",
+    "heading": "Escalation",
+    "text": "Escalate to the application team if multiple users report the same browser issue after cache clearing."
+  },
+  {
+    "doc_id": "browser_cache_issue",
+    "chunk_id": "browser_cache_issue#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1007\n- TCK-1008"
+  },
+  {
+    "doc_id": "ci_pipeline_failure",
+    "chunk_id": "ci_pipeline_failure#001",
+    "heading": "Background",
+    "text": "CI pipeline failures can block deployments and pull request merges when tests, builds, or environment checks fail."
+  },
+  {
+    "doc_id": "ci_pipeline_failure",
+    "chunk_id": "ci_pipeline_failure#002",
+    "heading": "Symptoms",
+    "text": "- A pull request shows a failed check.\n- The build passes locally but fails in CI.\n- Deployment jobs stop before release."
+  },
+  {
+    "doc_id": "ci_pipeline_failure",
+    "chunk_id": "ci_pipeline_failure#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Review the failed job logs and identify the exact failing step.\n2. Compare the CI runtime version with the local environment.\n3. Check recent dependency or lockfile changes.\n4. Rerun the job once to rule out transient infrastructure errors.\n5. Ask the owner to fix failing tests or update the pipeline configuration."
+  },
+  {
+    "doc_id": "ci_pipeline_failure",
+    "chunk_id": "ci_pipeline_failure#004",
+    "heading": "Common Errors",
+    "text": "- Dependency install failed\n- Test timeout\n- Missing environment variable"
+  },
+  {
+    "doc_id": "ci_pipeline_failure",
+    "chunk_id": "ci_pipeline_failure#005",
+    "heading": "Escalation",
+    "text": "Escalate to developer productivity if multiple repositories fail on the same CI runner."
+  },
+  {
+    "doc_id": "ci_pipeline_failure",
+    "chunk_id": "ci_pipeline_failure#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1049\n- TCK-1050"
+  },
+  {
+    "doc_id": "cloud_cost_alert",
+    "chunk_id": "cloud_cost_alert#001",
+    "heading": "Background",
+    "text": "Cloud cost alerts are triggered when spending exceeds expected thresholds or an unusual usage pattern appears."
+  },
+  {
+    "doc_id": "cloud_cost_alert",
+    "chunk_id": "cloud_cost_alert#002",
+    "heading": "Symptoms",
+    "text": "- A team receives a budget alert.\n- Daily spend increases unexpectedly.\n- A service shows abnormal compute, storage, or network usage."
+  },
+  {
+    "doc_id": "cloud_cost_alert",
+    "chunk_id": "cloud_cost_alert#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Identify the account, project, service, and time range.\n2. Compare current usage against the previous baseline.\n3. Check recent deployments or batch jobs.\n4. Stop non-production resources that are clearly unused.\n5. Ask the owning team to confirm whether the usage is expected."
+  },
+  {
+    "doc_id": "cloud_cost_alert",
+    "chunk_id": "cloud_cost_alert#004",
+    "heading": "Common Errors",
+    "text": "- Budget threshold exceeded\n- Unattached disk still billing\n- Autoscaling group over-provisioned"
+  },
+  {
+    "doc_id": "cloud_cost_alert",
+    "chunk_id": "cloud_cost_alert#005",
+    "heading": "Escalation",
+    "text": "Escalate to cloud finance or platform operations if production cost spikes continue."
+  },
+  {
+    "doc_id": "cloud_cost_alert",
+    "chunk_id": "cloud_cost_alert#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1051\n- TCK-1052"
+  },
+  {
+    "doc_id": "container_image_pull_failure",
+    "chunk_id": "container_image_pull_failure#001",
+    "heading": "Background",
+    "text": "Container image pull failures occur when a runtime cannot download an image from the registry."
+  },
+  {
+    "doc_id": "container_image_pull_failure",
+    "chunk_id": "container_image_pull_failure#002",
+    "heading": "Symptoms",
+    "text": "- A pod remains in ImagePullBackOff.\n- Deployment rollout does not progress.\n- The registry returns authentication or not found errors."
+  },
+  {
+    "doc_id": "container_image_pull_failure",
+    "chunk_id": "container_image_pull_failure#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the image name and tag.\n2. Check whether the image exists in the registry.\n3. Verify registry credentials or image pull secrets.\n4. Confirm the cluster can reach the registry network endpoint.\n5. Redeploy after correcting the tag or secret."
+  },
+  {
+    "doc_id": "container_image_pull_failure",
+    "chunk_id": "container_image_pull_failure#004",
+    "heading": "Common Errors",
+    "text": "- ImagePullBackOff\n- Unauthorized\n- Manifest unknown"
+  },
+  {
+    "doc_id": "container_image_pull_failure",
+    "chunk_id": "container_image_pull_failure#005",
+    "heading": "Escalation",
+    "text": "Escalate to platform engineering if registry credentials are valid but all pulls fail."
+  },
+  {
+    "doc_id": "container_image_pull_failure",
+    "chunk_id": "container_image_pull_failure#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1053\n- TCK-1054"
+  },
+  {
+    "doc_id": "data_pipeline_processing_delay",
+    "chunk_id": "data_pipeline_processing_delay#001",
+    "heading": "Background",
+    "text": "A data pipeline moves records through ingestion, validation, transformation, storage, and publication stages. A delay means records are still moving but arrive later than the service-level objective. This differs from a complete outage, silent data loss, or incorrect data, although the same incident may develop into one of those conditions. The first support task is to establish the event-time delay, the processing backlog, and the last stage known to contain complete data.\n\nPipeline delay can be caused by an upstream traffic increase, a slow or unavailable dependency, insufficient worker capacity, repeated retries, malformed records, schema changes, storage throttling, or a recent deployment. Increasing capacity before locating the constrained stage may increase cost without improving throughput. Restarting consumers without recording offsets and checkpoints may also duplicate processing or make data loss harder to detect."
+  },
+  {
+    "doc_id": "data_pipeline_processing_delay",
+    "chunk_id": "data_pipeline_processing_delay#002",
+    "heading": "Symptoms",
+    "text": "- Dashboard freshness exceeds the documented service-level objective.\n- Consumer lag or queue depth grows continuously.\n- Scheduled reports contain older data than the source system.\n- Workers are running but throughput is below the incoming event rate.\n- A subset of partitions or tenants is delayed while others remain current.\n- Retry, timeout, throttling, or dead-letter queue metrics increase.\n\nRecord the affected dataset, environment, expected freshness, observed freshness, first delayed event time, current backlog, and business deadline. Confirm whether records are late, missing, duplicated, or incorrect because each condition requires different recovery and verification steps."
+  },
+  {
+    "doc_id": "data_pipeline_processing_delay",
+    "chunk_id": "data_pipeline_processing_delay#003",
+    "heading": "Troubleshooting Workflow",
+    "text": "1. Confirm user impact and the freshness contract. Identify which reports, APIs, models, or downstream jobs consume the delayed data. Compare observed delay with the documented service-level objective rather than assuming every backlog is an incident. Record any time-sensitive business process, such as billing, fraud detection, or executive reporting, that changes the priority.\n\n2. Establish a timeline using event time and processing time. Event time describes when the source produced a record; processing time describes when the pipeline handled it. Compare both timestamps at ingestion, transformation, and output. This shows where delay begins. Use a known record identifier or a safe synthetic event to trace progress, while following production data handling rules.\n\n3. Check source health and arrival rate. Confirm that the source is producing data and that authentication, quotas, and network paths are healthy. Compare current input rate with the normal baseline and worker capacity. A traffic spike with healthy processing may require controlled scaling, while a sudden input drop may indicate an upstream failure rather than a consumer problem.\n\n4. Locate the constrained stage. Review queue depth, consumer lag, batch duration, worker utilization, error rate, retry count, and dependency latency for each stage. A high queue depth before a stage and normal depth after it usually identifies the bottleneck. Break metrics down by partition, tenant, region, or message type so one blocked subset is not hidden by healthy averages.\n\n5. Inspect failed and retried records. Sample redacted errors from the retry or dead-letter path. Group them by error type instead of reading individual messages one at a time. Determine whether a malformed record, schema mismatch, permission change, timeout, or rate limit is causing repeated work. Do not delete or replay a dead-letter queue until its retention, ordering, and duplication behavior are understood."
+  },
+  {
+    "doc_id": "data_pipeline_processing_delay",
+    "chunk_id": "data_pipeline_processing_delay#004",
+    "heading": "Troubleshooting Workflow",
+    "text": "6. Review recent changes. Compare the first delay with deployments, configuration changes, schema releases, credential rotations, autoscaling changes, and dependency incidents. Check whether a new transformation increased CPU, memory, database queries, or external API calls per record. Use deployment identifiers and configuration versions so a suspected change can be tested or rolled back precisely.\n\n7. Validate worker health and capacity. Check whether workers are crash-looping, blocked on garbage collection, out of memory, throttled, or waiting on a connection pool. Compare active workers with desired replicas and confirm that autoscaling metrics represent actual work. Scaling is appropriate only when processing is parallelizable and the downstream systems can accept the additional load.\n\n8. Check partition balance and ordering constraints. One hot partition can create severe lag even when total utilization appears low. Confirm that partition keys distribute traffic as designed and that a single tenant or key is not dominating a partition. If ordering is required, do not redistribute or replay messages without understanding how the change affects order and idempotency.\n\n9. Inspect downstream dependencies. Measure database latency, storage throttling, API rate limits, DNS failures, and network timeouts from the workers' environment. Verify connection pool saturation and query performance. A dependency may be technically available but too slow to support the current throughput. Coordinate capacity or query changes with the owning team rather than disabling retries globally.\n\n10. Choose a controlled recovery action. Depending on the confirmed cause, roll back a deployment, fix a schema mapping, quarantine malformed records, restore credentials, scale workers within approved limits, or reduce dependency pressure. Record queue offsets, checkpoints, backlog size, and worker count before the change. Prefer reversible actions and change one major variable at a time so the effect can be measured.\n\n11. Monitor catch-up behavior. Recovery requires processing throughput to remain higher than arrival rate until the backlog reaches normal levels. Estimate catch-up time from net throughput and compare it with the business deadline. Watch error rate, duplicates, resource saturation, and downstream load while the backlog drains. A flat backlog after scaling indicates the original bottleneck remains.\n\n12. Verify data completeness. Select records from before, during, and after the incident window and confirm they appear once in the expected output. Compare source and destination counts using the pipeline's approved reconciliation method. Confirm that late records triggered required downstream calculations or reports. Do not declare recovery only because queue depth reached zero."
+  },
+  {
+    "doc_id": "data_pipeline_processing_delay",
+    "chunk_id": "data_pipeline_processing_delay#005",
+    "heading": "Common Findings",
+    "text": "- A schema change caused every affected record to enter a retry loop.\n- One partition received most traffic because a partition key became constant.\n- A worker deployment increased database calls per record and saturated the connection pool.\n- Autoscaling used CPU while workers were blocked on network I/O, so it did not add capacity.\n- A downstream API lowered its rate limit and retries increased the backlog.\n- An expired credential affected only one pipeline stage.\n- Workers recovered but a dead-letter queue still contained unprocessed records.\n- The backlog cleared, but a non-idempotent replay created duplicate output rows."
+  },
+  {
+    "doc_id": "data_pipeline_processing_delay",
+    "chunk_id": "data_pipeline_processing_delay#006",
+    "heading": "Resolution And Verification",
+    "text": "Apply the smallest change that removes the confirmed bottleneck and preserves processing guarantees. Record the deployment, configuration, schema, or capacity change. Monitor incoming rate, processing rate, queue depth, oldest event age, retry rate, and worker saturation until the pipeline returns to its normal operating range.\n\nVerify correctness separately from performance. Reconcile representative source and destination records across the incident window, check for duplicates, and confirm downstream consumers received late updates. Ask the business owner to confirm that the affected report or workflow is current. Preserve the incident timeline and backlog measurements for capacity planning and future regression tests."
+  },
+  {
+    "doc_id": "data_pipeline_processing_delay",
+    "chunk_id": "data_pipeline_processing_delay#007",
+    "heading": "Escalation",
+    "text": "Escalate to the pipeline owner when code, schema, checkpoint, ordering, or idempotency behavior is involved. Escalate to the source owner when events are missing before ingestion. Escalate to Database Operations, Storage, Network Engineering, or the external service owner when their dependency is the constrained stage. Involve Incident Response when multiple critical consumers are affected or the projected recovery misses a business deadline.\n\nInclude the dataset, environment, service-level objective, observed delay, backlog size, arrival and processing rates, affected partitions, first failure time, recent changes, representative redacted errors, current recovery estimate, and actions already taken. Clearly state whether data is delayed, missing, duplicated, or incorrect."
+  },
+  {
+    "doc_id": "data_pipeline_processing_delay",
+    "chunk_id": "data_pipeline_processing_delay#008",
+    "heading": "Related Tickets",
+    "text": "- TCK-0254\n- TCK-0255\n- TCK-0256"
+  },
+  {
+    "doc_id": "database_connection_issue",
+    "chunk_id": "database_connection_issue#001",
+    "heading": "Background",
+    "text": "Application database connection failures are often caused by expired credentials, firewall rules, or unavailable database instances."
+  },
+  {
+    "doc_id": "database_connection_issue",
+    "chunk_id": "database_connection_issue#002",
+    "heading": "Symptoms",
+    "text": "- The application returns database timeout errors.\n- Migrations fail in CI.\n- Connection attempts fail from one environment only."
+  },
+  {
+    "doc_id": "database_connection_issue",
+    "chunk_id": "database_connection_issue#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the database hostname, port, and environment.\n2. Verify the service secret has the current username and password.\n3. Check whether the source network is allowed by firewall rules.\n4. Confirm the database instance is healthy.\n5. Retry with a short connection test from the affected environment."
+  },
+  {
+    "doc_id": "database_connection_issue",
+    "chunk_id": "database_connection_issue#004",
+    "heading": "Common Errors",
+    "text": "- Connection timed out\n- Password authentication failed\n- Too many connections"
+  },
+  {
+    "doc_id": "database_connection_issue",
+    "chunk_id": "database_connection_issue#005",
+    "heading": "Escalation",
+    "text": "Escalate to database operations if the instance is unhealthy or connection limits are reached."
+  },
+  {
+    "doc_id": "database_connection_issue",
+    "chunk_id": "database_connection_issue#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1009\n- TCK-1010"
+  },
+  {
+    "doc_id": "device_enrollment",
+    "chunk_id": "device_enrollment#001",
+    "heading": "Background",
+    "text": "Corporate devices must be enrolled before they can access protected applications and internal networks."
+  },
+  {
+    "doc_id": "device_enrollment",
+    "chunk_id": "device_enrollment#002",
+    "heading": "Symptoms",
+    "text": "- The device is marked unmanaged.\n- Conditional access blocks sign-in.\n- Required applications are missing."
+  },
+  {
+    "doc_id": "device_enrollment",
+    "chunk_id": "device_enrollment#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the device serial number and operating system.\n2. Check whether the device appears in the device management console.\n3. Ask the user to install the management profile.\n4. Verify compliance policies are passing.\n5. Sync the device and retry access."
+  },
+  {
+    "doc_id": "device_enrollment",
+    "chunk_id": "device_enrollment#004",
+    "heading": "Common Errors",
+    "text": "- Device not compliant\n- Management profile missing\n- Enrollment failed"
+  },
+  {
+    "doc_id": "device_enrollment",
+    "chunk_id": "device_enrollment#005",
+    "heading": "Escalation",
+    "text": "Escalate to endpoint engineering if enrollment fails after profile reinstall."
+  },
+  {
+    "doc_id": "device_enrollment",
+    "chunk_id": "device_enrollment#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1011\n- TCK-1012"
+  },
+  {
+    "doc_id": "dns_resolution_failure",
+    "chunk_id": "dns_resolution_failure#001",
+    "heading": "Background",
+    "text": "DNS resolution failures prevent users and services from reaching internal or external hostnames."
+  },
+  {
+    "doc_id": "dns_resolution_failure",
+    "chunk_id": "dns_resolution_failure#002",
+    "heading": "Symptoms",
+    "text": "- The browser cannot find an internal site.\n- CLI tools report unknown host.\n- Only one network or region is affected."
+  },
+  {
+    "doc_id": "dns_resolution_failure",
+    "chunk_id": "dns_resolution_failure#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the exact hostname and affected network.\n2. Ask the user to flush local DNS cache.\n3. Test resolution from a known healthy network.\n4. Check the DNS record in the authoritative zone.\n5. Verify VPN or split-DNS settings if the hostname is internal."
+  },
+  {
+    "doc_id": "dns_resolution_failure",
+    "chunk_id": "dns_resolution_failure#004",
+    "heading": "Common Errors",
+    "text": "- NXDOMAIN\n- Server failed\n- Unknown host"
+  },
+  {
+    "doc_id": "dns_resolution_failure",
+    "chunk_id": "dns_resolution_failure#005",
+    "heading": "Escalation",
+    "text": "Escalate to network engineering if authoritative DNS records are missing or inconsistent."
+  },
+  {
+    "doc_id": "dns_resolution_failure",
+    "chunk_id": "dns_resolution_failure#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1013\n- TCK-1014"
+  },
+  {
+    "doc_id": "email_delivery_issue",
+    "chunk_id": "email_delivery_issue#001",
+    "heading": "Background",
+    "text": "Email delivery issues may be caused by spam filtering, mailbox rules, DNS records, or sender reputation."
+  },
+  {
+    "doc_id": "email_delivery_issue",
+    "chunk_id": "email_delivery_issue#002",
+    "heading": "Symptoms",
+    "text": "- The user does not receive expected email.\n- Messages go to spam or quarantine.\n- The sender receives a bounce message."
+  },
+  {
+    "doc_id": "email_delivery_issue",
+    "chunk_id": "email_delivery_issue#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm sender, recipient, subject, and timestamp.\n2. Search the mail trace logs.\n3. Check spam quarantine and mailbox rules.\n4. Verify SPF, DKIM, and DMARC status for external senders.\n5. Release quarantined messages only after confirming they are safe."
+  },
+  {
+    "doc_id": "email_delivery_issue",
+    "chunk_id": "email_delivery_issue#004",
+    "heading": "Common Errors",
+    "text": "- Message quarantined\n- SPF fail\n- Recipient address rejected"
+  },
+  {
+    "doc_id": "email_delivery_issue",
+    "chunk_id": "email_delivery_issue#005",
+    "heading": "Escalation",
+    "text": "Escalate to messaging security if legitimate business email is repeatedly quarantined."
+  },
+  {
+    "doc_id": "email_delivery_issue",
+    "chunk_id": "email_delivery_issue#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1015\n- TCK-1016"
+  },
+  {
+    "doc_id": "escalation_policy",
+    "chunk_id": "escalation_policy#001",
+    "heading": "Background",
+    "text": "Support cases should be escalated when they exceed service desk authority, affect multiple users, or involve security risk."
+  },
+  {
+    "doc_id": "escalation_policy",
+    "chunk_id": "escalation_policy#002",
+    "heading": "Symptoms",
+    "text": "- The same issue affects multiple users.\n- The service desk cannot complete required admin action.\n- The issue has security or compliance impact."
+  },
+  {
+    "doc_id": "escalation_policy",
+    "chunk_id": "escalation_policy#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Collect user, service, environment, and timestamp details.\n2. Attach screenshots, logs, and error messages.\n3. Classify severity based on impact and urgency.\n4. Assign the ticket to the correct escalation group.\n5. Add a clear summary of attempted troubleshooting."
+  },
+  {
+    "doc_id": "escalation_policy",
+    "chunk_id": "escalation_policy#004",
+    "heading": "Common Errors",
+    "text": "- Missing reproduction steps\n- Incorrect assignment group\n- No business impact documented"
+  },
+  {
+    "doc_id": "escalation_policy",
+    "chunk_id": "escalation_policy#005",
+    "heading": "Escalation",
+    "text": "Escalate immediately for security incidents, production outages, or executive-impacting issues."
+  },
+  {
+    "doc_id": "escalation_policy",
+    "chunk_id": "escalation_policy#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1017\n- TCK-1018"
+  },
+  {
+    "doc_id": "github_org_access",
+    "chunk_id": "github_org_access#001",
+    "heading": "Background",
+    "text": "GitHub organization access is granted through identity groups and must follow least privilege."
+  },
+  {
+    "doc_id": "github_org_access",
+    "chunk_id": "github_org_access#002",
+    "heading": "Access Request Process",
+    "text": "New GitHub organization access requires manager approval or repository owner approval before the user is added to an identity group. The request should include the GitHub username, corporate email, business justification, required repositories or teams, and the requested access level."
+  },
+  {
+    "doc_id": "github_org_access",
+    "chunk_id": "github_org_access#003",
+    "heading": "Symptoms",
+    "text": "- The user cannot see a repository.\n- Pull or push operations are denied.\n- The user is not listed in the organization."
+  },
+  {
+    "doc_id": "github_org_access",
+    "chunk_id": "github_org_access#004",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the GitHub username and corporate email.\n2. Confirm manager approval or repository owner approval is attached to the request.\n3. Verify the user belongs to the correct identity group.\n4. Check repository team permissions.\n5. Ask the user to accept any pending organization invitation.\n6. Confirm SSO authorization is enabled for the organization."
+  },
+  {
+    "doc_id": "github_org_access",
+    "chunk_id": "github_org_access#005",
+    "heading": "Common Errors",
+    "text": "- Repository not found\n- Permission denied\n- SAML SSO authorization required"
+  },
+  {
+    "doc_id": "github_org_access",
+    "chunk_id": "github_org_access#006",
+    "heading": "Escalation",
+    "text": "Escalate to developer productivity if repository ownership or team mapping is incorrect."
+  },
+  {
+    "doc_id": "github_org_access",
+    "chunk_id": "github_org_access#007",
+    "heading": "Related Tickets",
+    "text": "- TCK-1019\n- TCK-1020"
+  },
+  {
+    "doc_id": "internal_api_rate_limit",
+    "chunk_id": "internal_api_rate_limit#001",
+    "heading": "Background",
+    "text": "Internal APIs use rate limits to protect shared services from traffic spikes, retry storms, and clients that send requests faster than the service can process them. A limit may apply per user, service account, API key, source application, or endpoint. When a client exceeds the allowed rate, the API commonly returns HTTP 429. Some gateways also return rate-limit headers that show the limit, remaining requests, and reset time.\n\nA rate-limit incident does not always mean the configured limit is too low. The client may have introduced an unbounded loop, lost its local cache, increased concurrency, or retried failures without delay. Raising the limit before understanding the request pattern can move the failure into a database or another downstream service."
+  },
+  {
+    "doc_id": "internal_api_rate_limit",
+    "chunk_id": "internal_api_rate_limit#002",
+    "heading": "Symptoms",
+    "text": "- Requests return HTTP 429 or `Too Many Requests`.\n- Success rate falls during traffic peaks and recovers later.\n- One client is affected while other API consumers remain healthy.\n- Gateway metrics show a sudden increase in requests for one endpoint.\n- Client logs show repeated immediate retries after a failed request."
+  },
+  {
+    "doc_id": "internal_api_rate_limit",
+    "chunk_id": "internal_api_rate_limit#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Record the API name, endpoint, client identity, environment, first failure time, and business impact. Confirm whether the limit affects one request type or the entire API.\n2. Check the response status and rate-limit headers. Capture request and trace identifiers, but do not place API keys, authorization headers, or personal data in the ticket.\n3. Compare the client's current request rate with its normal baseline and documented quota. Break traffic down by endpoint, status code, and client identity.\n4. Review recent client deployments and configuration changes. Look for increased concurrency, removed caching, new polling behavior, pagination errors, or a loop that repeats the same request.\n5. Inspect retry behavior. Clients should respect `Retry-After` when provided and use bounded exponential backoff with jitter. Immediate synchronized retries can create a retry storm and extend the incident.\n6. Confirm whether requests can be batched, cached, deduplicated, or scheduled outside the busiest period. Verify that failed operations are idempotent before retrying them automatically.\n7. Check API gateway and service health. If many unrelated clients receive 429 responses at normal traffic levels, the shared quota or gateway configuration may be incorrect.\n8. Increase a quota only with service-owner approval and evidence that the API and its dependencies have enough capacity. Prefer a temporary, monitored increase while a permanent design change is reviewed."
+  },
+  {
+    "doc_id": "internal_api_rate_limit",
+    "chunk_id": "internal_api_rate_limit#004",
+    "heading": "Common Findings",
+    "text": "- A client deployment changed polling from every five minutes to every five seconds.\n- Multiple workers processed the same queue item and sent duplicate API requests.\n- The client ignored `Retry-After` and retried immediately.\n- A shared service account caused several applications to consume one quota.\n- The gateway applied a production quota to a newly created client incorrectly."
+  },
+  {
+    "doc_id": "internal_api_rate_limit",
+    "chunk_id": "internal_api_rate_limit#005",
+    "heading": "Resolution And Verification",
+    "text": "Correct the request pattern, retry policy, client identity, or approved quota. Verify that the request rate returns to the expected range, HTTP 429 responses stop, and normal operations complete without duplicate actions. Monitor both the API and its downstream dependencies after recovery."
+  },
+  {
+    "doc_id": "internal_api_rate_limit",
+    "chunk_id": "internal_api_rate_limit#006",
+    "heading": "Escalation",
+    "text": "Escalate to the client owner when the request pattern or retry implementation is responsible. Escalate to the API platform team when quotas, gateway rules, or shared capacity are incorrect. Include traffic graphs, affected endpoints, client identity, trace IDs, response headers, recent changes, and actions already taken."
+  },
+  {
+    "doc_id": "internal_api_rate_limit",
+    "chunk_id": "internal_api_rate_limit#007",
+    "heading": "Related Tickets",
+    "text": "- TCK-0257\n- TCK-0258"
+  },
+  {
+    "doc_id": "kubernetes_pod_crashloop",
+    "chunk_id": "kubernetes_pod_crashloop#001",
+    "heading": "Background",
+    "text": "A pod enters CrashLoopBackOff when the container repeatedly starts and exits."
+  },
+  {
+    "doc_id": "kubernetes_pod_crashloop",
+    "chunk_id": "kubernetes_pod_crashloop#002",
+    "heading": "Symptoms",
+    "text": "- The pod status is CrashLoopBackOff.\n- The deployment has fewer ready replicas than expected.\n- Logs show repeated startup failures."
+  },
+  {
+    "doc_id": "kubernetes_pod_crashloop",
+    "chunk_id": "kubernetes_pod_crashloop#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Check pod logs for the previous container instance.\n2. Inspect environment variables and mounted secrets.\n3. Verify readiness and liveness probe configuration.\n4. Confirm the container image version is correct.\n5. Roll back to the previous stable deployment if production is impacted."
+  },
+  {
+    "doc_id": "kubernetes_pod_crashloop",
+    "chunk_id": "kubernetes_pod_crashloop#004",
+    "heading": "Common Errors",
+    "text": "- CrashLoopBackOff\n- Missing required environment variable\n- Liveness probe failed"
+  },
+  {
+    "doc_id": "kubernetes_pod_crashloop",
+    "chunk_id": "kubernetes_pod_crashloop#005",
+    "heading": "Escalation",
+    "text": "Escalate to the service owner if the application exits due to code or configuration errors."
+  },
+  {
+    "doc_id": "kubernetes_pod_crashloop",
+    "chunk_id": "kubernetes_pod_crashloop#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1055\n- TCK-1056"
+  },
+  {
+    "doc_id": "laptop_disk_space",
+    "chunk_id": "laptop_disk_space#001",
+    "heading": "Background",
+    "text": "Low disk space can prevent updates, builds, and security tools from running correctly."
+  },
+  {
+    "doc_id": "laptop_disk_space",
+    "chunk_id": "laptop_disk_space#002",
+    "heading": "Symptoms",
+    "text": "- The laptop shows a low storage warning.\n- Build tools fail to write files.\n- System updates cannot be installed."
+  },
+  {
+    "doc_id": "laptop_disk_space",
+    "chunk_id": "laptop_disk_space#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Ask the user to check available disk space.\n2. Remove old downloads, logs, and temporary files.\n3. Empty the Recycle Bin or Trash to permanently free deleted file space.\n4. Clear package manager caches.\n5. Move large personal files to approved storage.\n6. Reboot and retry the failed operation."
+  },
+  {
+    "doc_id": "laptop_disk_space",
+    "chunk_id": "laptop_disk_space#004",
+    "heading": "Common Errors",
+    "text": "- No space left on device\n- Update failed due to insufficient storage\n- Build cache write failed"
+  },
+  {
+    "doc_id": "laptop_disk_space",
+    "chunk_id": "laptop_disk_space#005",
+    "heading": "Escalation",
+    "text": "Escalate to endpoint support if disk cleanup does not restore enough free space."
+  },
+  {
+    "doc_id": "laptop_disk_space",
+    "chunk_id": "laptop_disk_space#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1021\n- TCK-1022"
+  },
+  {
+    "doc_id": "license_assignment",
+    "chunk_id": "license_assignment#001",
+    "heading": "Background",
+    "text": "Users need the correct product license before they can access licensed applications and premium features."
+  },
+  {
+    "doc_id": "license_assignment",
+    "chunk_id": "license_assignment#002",
+    "heading": "Symptoms",
+    "text": "- The application says the user does not have a license.\n- Premium features are hidden.\n- Access works for teammates but not for the user."
+  },
+  {
+    "doc_id": "license_assignment",
+    "chunk_id": "license_assignment#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the user's corporate email address.\n2. Check the admin console for assigned licenses.\n3. Verify the user is in the correct license group.\n4. Ask the user to sign out and sign in again.\n5. Wait for license propagation and retest access."
+  },
+  {
+    "doc_id": "license_assignment",
+    "chunk_id": "license_assignment#004",
+    "heading": "Common Errors",
+    "text": "- License required\n- Feature not included in plan\n- User not assigned to product"
+  },
+  {
+    "doc_id": "license_assignment",
+    "chunk_id": "license_assignment#005",
+    "heading": "Escalation",
+    "text": "Escalate to software asset management if the team has no available licenses."
+  },
+  {
+    "doc_id": "license_assignment",
+    "chunk_id": "license_assignment#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1023\n- TCK-1024"
+  },
+  {
+    "doc_id": "logging_access",
+    "chunk_id": "logging_access#001",
+    "heading": "Background",
+    "text": "Teams need access to logs to debug services, but production log access must follow privacy and security rules."
+  },
+  {
+    "doc_id": "logging_access",
+    "chunk_id": "logging_access#002",
+    "heading": "Access Request Process",
+    "text": "Log access requests should include the service name, environment, requested log scope, business justification, and duration of access. Production logging access requires manager approval or service owner approval before the user is added to the approved logging group."
+  },
+  {
+    "doc_id": "logging_access",
+    "chunk_id": "logging_access#003",
+    "heading": "Symptoms",
+    "text": "- The user cannot open the logging dashboard.\n- Queries return permission denied.\n- The user can see staging logs but not production logs."
+  },
+  {
+    "doc_id": "logging_access",
+    "chunk_id": "logging_access#004",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the service, environment, and requested log scope.\n2. Verify the user belongs to the approved logging group.\n3. Check whether production access requires manager approval.\n4. Ask the user to retry after group membership propagation.\n5. Confirm the logging dashboard uses the correct identity provider."
+  },
+  {
+    "doc_id": "logging_access",
+    "chunk_id": "logging_access#005",
+    "heading": "Common Errors",
+    "text": "- Permission denied\n- Index not found\n- Access request pending"
+  },
+  {
+    "doc_id": "logging_access",
+    "chunk_id": "logging_access#006",
+    "heading": "Escalation",
+    "text": "Escalate to observability platform if approved users still cannot access logs."
+  },
+  {
+    "doc_id": "logging_access",
+    "chunk_id": "logging_access#007",
+    "heading": "Related Tickets",
+    "text": "- TCK-1057\n- TCK-1058"
+  },
+  {
+    "doc_id": "mfa_reset",
+    "chunk_id": "mfa_reset#001",
+    "heading": "Background",
+    "text": "Multi-factor authentication must be reset when a user loses a device or cannot complete the MFA challenge."
+  },
+  {
+    "doc_id": "mfa_reset",
+    "chunk_id": "mfa_reset#002",
+    "heading": "Symptoms",
+    "text": "- The user cannot approve a push notification.\n- The authenticator app was deleted.\n- A new phone cannot receive MFA prompts."
+  },
+  {
+    "doc_id": "mfa_reset",
+    "chunk_id": "mfa_reset#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Verify the user's identity using the approved support process.\n2. Remove the old MFA device from the identity console.\n3. Start a new MFA enrollment session.\n4. Ask the user to register a new authenticator method.\n5. Confirm the user can sign in after enrollment."
+  },
+  {
+    "doc_id": "mfa_reset",
+    "chunk_id": "mfa_reset#004",
+    "heading": "Common Errors",
+    "text": "- MFA challenge expired\n- No registered authentication methods\n- Push notification not received"
+  },
+  {
+    "doc_id": "mfa_reset",
+    "chunk_id": "mfa_reset#005",
+    "heading": "Escalation",
+    "text": "Escalate to identity security if the user cannot pass identity verification."
+  },
+  {
+    "doc_id": "mfa_reset",
+    "chunk_id": "mfa_reset#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1025\n- TCK-1026"
+  },
+  {
+    "doc_id": "monitoring_alert_noise",
+    "chunk_id": "monitoring_alert_noise#001",
+    "heading": "Background",
+    "text": "Alert noise happens when alerts fire too often, lack actionable context, or trigger for expected behavior."
+  },
+  {
+    "doc_id": "monitoring_alert_noise",
+    "chunk_id": "monitoring_alert_noise#002",
+    "heading": "Symptoms",
+    "text": "- The on-call team receives repeated alerts.\n- Alerts resolve without intervention.\n- The alert message does not identify a clear owner."
+  },
+  {
+    "doc_id": "monitoring_alert_noise",
+    "chunk_id": "monitoring_alert_noise#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Identify the alert name, service, and firing condition.\n2. Review recent metric history and deployment events.\n3. Confirm whether the threshold matches the service SLO.\n4. Add missing labels, runbook links, or ownership metadata.\n5. Tune the threshold or routing after approval from the service owner."
+  },
+  {
+    "doc_id": "monitoring_alert_noise",
+    "chunk_id": "monitoring_alert_noise#004",
+    "heading": "Common Errors",
+    "text": "- Alert flapping\n- Missing runbook\n- Incorrect routing label"
+  },
+  {
+    "doc_id": "monitoring_alert_noise",
+    "chunk_id": "monitoring_alert_noise#005",
+    "heading": "Escalation",
+    "text": "Escalate to observability platform if alert routing is broken across multiple services."
+  },
+  {
+    "doc_id": "monitoring_alert_noise",
+    "chunk_id": "monitoring_alert_noise#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1059\n- TCK-1060"
+  },
+  {
+    "doc_id": "network_firewall_request",
+    "chunk_id": "network_firewall_request#001",
+    "heading": "Background",
+    "text": "Firewall requests are needed when a service or user requires network access between approved systems."
+  },
+  {
+    "doc_id": "network_firewall_request",
+    "chunk_id": "network_firewall_request#002",
+    "heading": "Symptoms",
+    "text": "- Connection attempts time out.\n- A service cannot reach a dependency.\n- Access works in one environment but not another."
+  },
+  {
+    "doc_id": "network_firewall_request",
+    "chunk_id": "network_firewall_request#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Collect source, destination, port, protocol, and environment.\n2. Confirm the business justification and data classification.\n3. Test current connectivity from the source network.\n4. Check whether an existing firewall rule already covers the request.\n5. Submit the rule request with an expiration date when possible."
+  },
+  {
+    "doc_id": "network_firewall_request",
+    "chunk_id": "network_firewall_request#004",
+    "heading": "Common Errors",
+    "text": "- Connection timed out\n- Firewall rule missing\n- Port blocked"
+  },
+  {
+    "doc_id": "network_firewall_request",
+    "chunk_id": "network_firewall_request#005",
+    "heading": "Escalation",
+    "text": "Escalate to network security if the request involves sensitive data or external exposure."
+  },
+  {
+    "doc_id": "network_firewall_request",
+    "chunk_id": "network_firewall_request#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1061\n- TCK-1062"
+  },
+  {
+    "doc_id": "oauth_application_login_failure",
+    "chunk_id": "oauth_application_login_failure#001",
+    "heading": "Background",
+    "text": "OAuth and OpenID Connect allow an internal application to delegate user authentication to a central identity provider. A typical login starts when the application redirects the browser to the identity provider with a client identifier, redirect URI, requested scopes, state value, and nonce. After authentication, the identity provider sends an authorization code back to the registered redirect URI. The application exchanges that code for tokens and creates a local session. A failure at any stage may appear to the user as a login loop, a generic access denied page, or an application error after successful MFA.\n\nSupport engineers should first identify which stage failed. A browser redirect error usually points to client or redirect URI configuration. A failure during code exchange often involves a client secret, certificate, network path, or clock issue. A valid token followed by an application denial usually points to missing claims, group mappings, audience validation, or an application-side authorization rule. Separating authentication from authorization prevents unrelated changes and reduces the risk of weakening security controls while troubleshooting."
+  },
+  {
+    "doc_id": "oauth_application_login_failure",
+    "chunk_id": "oauth_application_login_failure#002",
+    "heading": "Symptoms",
+    "text": "- The browser displays `redirect_uri_mismatch`, `invalid_client`, or `invalid_grant`.\n- The user completes MFA but returns to the login page.\n- Login works for one environment but fails in another.\n- All users of one application fail while other SSO applications remain available.\n- Only users in a particular group receive an access denied response.\n- Application logs report an invalid issuer, audience, nonce, state, or token signature.\n\nRecord the exact error, affected application URL, environment, first observed time, and whether the issue affects one user or many users. These details determine whether to investigate a user assignment, application deployment, identity provider configuration, or shared platform incident."
+  },
+  {
+    "doc_id": "oauth_application_login_failure",
+    "chunk_id": "oauth_application_login_failure#003",
+    "heading": "Troubleshooting Workflow",
+    "text": "1. Confirm scope and impact. Ask whether the failure affects one user, one browser, one application, or every user of the application. Confirm the production or non-production environment and record a timestamp with timezone. Do not request passwords, authorization codes, access tokens, refresh tokens, client secrets, or session cookies in a ticket.\n\n2. Capture a correlation identifier. Use the identity provider request ID, application trace ID, or a timestamp and username if no identifier is displayed. Search identity provider sign-in logs and application authentication logs for the same attempt. Confirm whether the identity provider issued an authorization code and whether the application attempted a token exchange.\n\n3. Check basic user access. Verify that the user is active, assigned to the application, and included in the expected access group. Confirm that MFA enrollment and any device compliance requirement are satisfied. If only one user is affected, compare the user's assignments and claims with a working user who has the same business role. Do not copy privileged group membership simply to test access.\n\n4. Test the browser session safely. Retry in a private window to separate stale cookies from server-side configuration. If private browsing works, clear site data only for the application and identity provider domains rather than clearing all browser data. Confirm that browser extensions, strict tracking protection, or blocked third-party cookies are not interrupting the redirect. Preserve the original error before clearing data.\n\n5. Validate redirect configuration. Copy the redirect URI from the failed authorization request and compare it character for character with the URI registered for the correct OAuth client. Scheme, hostname, port, path, case, and trailing slash can matter. Confirm that the application is using the client ID for the same environment. Never add a wildcard redirect URI or an unreviewed domain as a quick fix."
+  },
+  {
+    "doc_id": "oauth_application_login_failure",
+    "chunk_id": "oauth_application_login_failure#004",
+    "heading": "Troubleshooting Workflow",
+    "text": "6. Investigate code exchange failures. If an authorization code was issued but token exchange failed, check for `invalid_client` or `invalid_grant` in application logs. Confirm that the client authentication method matches the identity provider configuration. Verify that the active client secret or certificate reference is available to the running application, but never print the secret value. Check that the authorization code is exchanged once, before expiration, and by the same redirect URI used in the authorization request.\n\n7. Validate time and network dependencies. OAuth tokens and authorization codes have short validity windows. Confirm that application hosts synchronize time through the approved time service and that clock drift is within platform limits. Verify outbound DNS and TLS connectivity from the application to the identity provider token and key endpoints. A browser reaching the identity provider does not prove that the application server can reach it.\n\n8. Validate returned tokens without exposing them. Use approved server-side diagnostics to inspect issuer, audience, expiration, nonce, and required claims. Redact user identifiers where policy requires it. Confirm that the application uses the current signing keys and refreshes the identity provider key set. If signature validation started failing after key rotation, check key cache refresh behavior before restarting services.\n\n9. Separate authentication from authorization. If token validation succeeds but the application denies access, inspect required group, role, tenant, or entitlement claims. Compare the claim names and formats expected by the application with those released by the identity provider. Large group memberships may be represented by an overage indicator rather than a complete group list. Follow the application owner's approved mapping process instead of editing claims without review.\n\n10. Compare recent changes. Review application deployments, OAuth client changes, secret or certificate rotations, proxy changes, and identity provider policy updates near the first failure. Roll back only when the change is strongly correlated with the incident and the service owner approves the rollback. Record the before and after configuration references without placing secret material in the ticket."
+  },
+  {
+    "doc_id": "oauth_application_login_failure",
+    "chunk_id": "oauth_application_login_failure#005",
+    "heading": "Common Findings",
+    "text": "- A deployment used the staging client ID with the production redirect URI.\n- The registered redirect URI differed by scheme, port, path, or trailing slash.\n- A rotated client secret was stored correctly but the application still referenced the previous version.\n- The application server clock drifted far enough for codes or tokens to appear expired.\n- The identity provider signing key rotated and the application cached an old key set.\n- A required group or role claim was renamed or omitted.\n- Multiple application instances exchanged the same authorization code.\n- A reverse proxy changed the external scheme or hostname used to build the redirect URI."
+  },
+  {
+    "doc_id": "oauth_application_login_failure",
+    "chunk_id": "oauth_application_login_failure#006",
+    "heading": "Resolution And Verification",
+    "text": "Apply the smallest approved change that corrects the identified failure stage. After the change, test with a standard user in the affected environment and confirm that authorization begins on the expected client, the callback reaches the registered redirect URI, token validation succeeds, and the correct application role is granted. Test logout and a second fresh login so an existing session does not hide the problem.\n\nMonitor authentication error rate and application login success for at least fifteen minutes or the team's normal observation window. Confirm with an affected user, attach redacted evidence to the ticket, and record the exact configuration or deployment version changed. Remove temporary diagnostic logging if it could capture identity data. Do not close a multi-user incident based on a single successful login when aggregate failures remain elevated."
+  },
+  {
+    "doc_id": "oauth_application_login_failure",
+    "chunk_id": "oauth_application_login_failure#007",
+    "heading": "Escalation",
+    "text": "Escalate to Identity Engineering when the identity provider rejects valid requests, signing keys or claims appear incorrect, or several applications are affected. Escalate to the application owner when the identity provider issues valid tokens but the application rejects them. Escalate to Network Engineering when application hosts cannot resolve or reach required identity endpoints. Treat unexpected redirect domains, stolen client credentials, replayed codes, or exposed tokens as a security incident and contact Security Operations immediately.\n\nInclude the application name, environment, impact, first failure time, correlation IDs, redacted error messages, failed workflow stage, checks already completed, recent changes, and the responsible incident channel. Never attach raw tokens, authorization codes, client secrets, passwords, or session cookies."
+  },
+  {
+    "doc_id": "oauth_application_login_failure",
+    "chunk_id": "oauth_application_login_failure#008",
+    "heading": "Related Tickets",
+    "text": "- TCK-0251\n- TCK-0252\n- TCK-0253"
+  },
+  {
+    "doc_id": "okta_group_membership",
+    "chunk_id": "okta_group_membership#001",
+    "heading": "Background",
+    "text": "Application access is often controlled by Okta group membership or another identity provider group."
+  },
+  {
+    "doc_id": "okta_group_membership",
+    "chunk_id": "okta_group_membership#002",
+    "heading": "Symptoms",
+    "text": "- The application tile is missing.\n- The user gets access denied after login.\n- License assignment does not update."
+  },
+  {
+    "doc_id": "okta_group_membership",
+    "chunk_id": "okta_group_membership#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the target application and requested role.\n2. Check current group membership for the user.\n3. Verify the access request was approved.\n4. Add the user to the correct group if approved.\n5. Ask the user to sign out and sign in again."
+  },
+  {
+    "doc_id": "okta_group_membership",
+    "chunk_id": "okta_group_membership#004",
+    "heading": "Common Errors",
+    "text": "- User not assigned to application\n- Group rule not applied\n- Access request pending approval"
+  },
+  {
+    "doc_id": "okta_group_membership",
+    "chunk_id": "okta_group_membership#005",
+    "heading": "Escalation",
+    "text": "Escalate to identity operations if automated group rules are not applying."
+  },
+  {
+    "doc_id": "okta_group_membership",
+    "chunk_id": "okta_group_membership#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1027\n- TCK-1028"
+  },
+  {
+    "doc_id": "password_reset",
+    "chunk_id": "password_reset#001",
+    "heading": "Background",
+    "text": "Users may need a password reset when they forget their password, suspect compromise, or fail repeated sign-in attempts."
+  },
+  {
+    "doc_id": "password_reset",
+    "chunk_id": "password_reset#002",
+    "heading": "Symptoms",
+    "text": "- The user cannot sign in with the current password.\n- The password reset link has expired.\n- Sign-in attempts trigger account lockout."
+  },
+  {
+    "doc_id": "password_reset",
+    "chunk_id": "password_reset#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Verify the user's identity.\n2. Send a password reset link through the identity console.\n3. Ask the user to create a password that meets policy.\n4. Confirm MFA still works after the reset.\n5. Ask the user to update saved passwords on all devices."
+  },
+  {
+    "doc_id": "password_reset",
+    "chunk_id": "password_reset#004",
+    "heading": "Common Errors",
+    "text": "- Password reset token expired\n- Password does not meet complexity requirements\n- Account locked"
+  },
+  {
+    "doc_id": "password_reset",
+    "chunk_id": "password_reset#005",
+    "heading": "Escalation",
+    "text": "Escalate to identity security if there are signs of account compromise."
+  },
+  {
+    "doc_id": "password_reset",
+    "chunk_id": "password_reset#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1029\n- TCK-1030"
+  },
+  {
+    "doc_id": "printer_setup",
+    "chunk_id": "printer_setup#001",
+    "heading": "Background",
+    "text": "Users may need help connecting to approved office printers from managed devices."
+  },
+  {
+    "doc_id": "printer_setup",
+    "chunk_id": "printer_setup#002",
+    "heading": "Symptoms",
+    "text": "- The printer does not appear in the device list.\n- Print jobs remain queued.\n- The user cannot install the printer driver."
+  },
+  {
+    "doc_id": "printer_setup",
+    "chunk_id": "printer_setup#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the office location and printer name.\n2. Verify the user is connected to the corporate network or VPN.\n3. Install the approved printer profile.\n4. Clear stuck print jobs.\n5. Print a test page."
+  },
+  {
+    "doc_id": "printer_setup",
+    "chunk_id": "printer_setup#004",
+    "heading": "Common Errors",
+    "text": "- Printer offline\n- Driver unavailable\n- Access denied to print queue"
+  },
+  {
+    "doc_id": "printer_setup",
+    "chunk_id": "printer_setup#005",
+    "heading": "Escalation",
+    "text": "Escalate to workplace IT if the printer is offline for multiple users."
+  },
+  {
+    "doc_id": "printer_setup",
+    "chunk_id": "printer_setup#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1031\n- TCK-1032"
+  },
+  {
+    "doc_id": "production_deployment_rollback",
+    "chunk_id": "production_deployment_rollback#001",
+    "heading": "Background",
+    "text": "Rollback is used when a production deployment causes user impact, elevated errors, or broken functionality."
+  },
+  {
+    "doc_id": "production_deployment_rollback",
+    "chunk_id": "production_deployment_rollback#002",
+    "heading": "Symptoms",
+    "text": "- Error rate increases after deployment.\n- Users report a new production issue.\n- Health checks or SLO alerts fail after release."
+  },
+  {
+    "doc_id": "production_deployment_rollback",
+    "chunk_id": "production_deployment_rollback#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the deployment version and start time.\n2. Compare error rate and latency before and after release.\n3. Notify the service owner and incident channel.\n4. Roll back to the last known good version.\n5. Monitor metrics until the service returns to normal."
+  },
+  {
+    "doc_id": "production_deployment_rollback",
+    "chunk_id": "production_deployment_rollback#004",
+    "heading": "Common Errors",
+    "text": "- Elevated 5xx rate\n- Failed health check\n- Rollback artifact not found"
+  },
+  {
+    "doc_id": "production_deployment_rollback",
+    "chunk_id": "production_deployment_rollback#005",
+    "heading": "Escalation",
+    "text": "Escalate to incident command if user impact continues after rollback."
+  },
+  {
+    "doc_id": "production_deployment_rollback",
+    "chunk_id": "production_deployment_rollback#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1063\n- TCK-1064"
+  },
+  {
+    "doc_id": "remote_desktop_access",
+    "chunk_id": "remote_desktop_access#001",
+    "heading": "Background",
+    "text": "Remote desktop access allows approved users to connect to managed workstations or jump hosts."
+  },
+  {
+    "doc_id": "remote_desktop_access",
+    "chunk_id": "remote_desktop_access#002",
+    "heading": "Symptoms",
+    "text": "- The remote desktop connection is refused.\n- The user can connect to VPN but not to the host.\n- Login succeeds but the session disconnects."
+  },
+  {
+    "doc_id": "remote_desktop_access",
+    "chunk_id": "remote_desktop_access#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the hostname and destination environment.\n2. Verify the user is approved for remote desktop access.\n3. Check VPN connectivity and network routing.\n4. Confirm the target host is powered on and reachable.\n5. Ask the user to retry with the approved remote desktop client."
+  },
+  {
+    "doc_id": "remote_desktop_access",
+    "chunk_id": "remote_desktop_access#004",
+    "heading": "Common Errors",
+    "text": "- Remote desktop cannot connect\n- Network level authentication failed\n- Host unreachable"
+  },
+  {
+    "doc_id": "remote_desktop_access",
+    "chunk_id": "remote_desktop_access#005",
+    "heading": "Escalation",
+    "text": "Escalate to endpoint engineering if the host is reachable but rejects approved users."
+  },
+  {
+    "doc_id": "remote_desktop_access",
+    "chunk_id": "remote_desktop_access#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1033\n- TCK-1034"
+  },
+  {
+    "doc_id": "salesforce_access",
+    "chunk_id": "salesforce_access#001",
+    "heading": "Background",
+    "text": "Salesforce access is controlled by identity groups, profiles, permission sets, and licensing."
+  },
+  {
+    "doc_id": "salesforce_access",
+    "chunk_id": "salesforce_access#002",
+    "heading": "Access Request Process",
+    "text": "New Salesforce access requires business justification and manager or application owner approval before a license, profile, or permission set is assigned. Approval should be captured before changing identity group membership or granting elevated permissions."
+  },
+  {
+    "doc_id": "salesforce_access",
+    "chunk_id": "salesforce_access#003",
+    "heading": "Symptoms",
+    "text": "- The user cannot log in to Salesforce.\n- A required object or field is missing.\n- The user sees insufficient privileges."
+  },
+  {
+    "doc_id": "salesforce_access",
+    "chunk_id": "salesforce_access#004",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the user's role and business justification.\n2. Confirm manager or application owner approval for the requested access.\n3. Check Salesforce license assignment.\n4. Verify identity group membership.\n5. Review profile and permission set assignments.\n6. Ask the user to refresh the session and retry."
+  },
+  {
+    "doc_id": "salesforce_access",
+    "chunk_id": "salesforce_access#005",
+    "heading": "Common Errors",
+    "text": "- Insufficient privileges\n- User is not assigned to application\n- License limit exceeded"
+  },
+  {
+    "doc_id": "salesforce_access",
+    "chunk_id": "salesforce_access#006",
+    "heading": "Escalation",
+    "text": "Escalate to the CRM admin team if permission sets are missing or license capacity is exhausted."
+  },
+  {
+    "doc_id": "salesforce_access",
+    "chunk_id": "salesforce_access#007",
+    "heading": "Related Tickets",
+    "text": "- TCK-1035\n- TCK-1036"
+  },
+  {
+    "doc_id": "scheduled_job_missed_run",
+    "chunk_id": "scheduled_job_missed_run#001",
+    "heading": "Background",
+    "text": "Scheduled jobs run reports, synchronizations, backups, billing tasks, and maintenance work at defined times. A missed run means the scheduler did not start the job, started it late, or started it but failed before producing the expected result. Troubleshooting should separate scheduler behavior from job execution and downstream publication.\n\nTime zones and daylight-saving changes are common sources of confusion. The schedule may be correct in UTC while users expect local time, or a local clock transition may create a repeated or nonexistent hour. Manually starting a job without checking idempotency can duplicate invoices, notifications, or data changes."
+  },
+  {
+    "doc_id": "scheduled_job_missed_run",
+    "chunk_id": "scheduled_job_missed_run#002",
+    "heading": "Symptoms",
+    "text": "- The expected report or output file was not created.\n- Scheduler history contains no run at the expected time.\n- A job remains queued or active beyond its normal duration.\n- A job ran successfully but downstream users did not receive the result.\n- The issue began after a schedule, credential, or deployment change."
+  },
+  {
+    "doc_id": "scheduled_job_missed_run",
+    "chunk_id": "scheduled_job_missed_run#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the job name, environment, expected schedule, scheduler timezone, last successful run, and business deadline. Determine whether the job never started, failed during execution, or completed without publishing its output.\n2. Inspect scheduler history and audit logs. Check whether the schedule was enabled, paused, deleted, or replaced. Record the configured expression and timezone rather than relying on a dashboard's displayed local time.\n3. Review the worker or execution logs using the scheduler run ID. Check startup errors, missing parameters, expired credentials, resource limits, dependency failures, and execution timeout.\n4. Compare recent configuration and deployment changes with the last successful run. Confirm that the job still references the correct command, image version, service account, and environment variables.\n5. Check scheduler and worker capacity. A run may remain queued when no worker matches its queue, region, permissions, or resource requirements.\n6. Verify downstream publication separately. A completed job may have written data successfully while email delivery, file transfer, or report refresh failed.\n7. Before rerunning, confirm whether the job is idempotent and whether partial output exists. Obtain owner approval for billing, payment, notification, deletion, or other high-impact jobs.\n8. Start one controlled replacement run, record its run ID, and monitor each stage. Do not create multiple manual runs while an earlier attempt may still be active."
+  },
+  {
+    "doc_id": "scheduled_job_missed_run",
+    "chunk_id": "scheduled_job_missed_run#004",
+    "heading": "Common Findings",
+    "text": "- The schedule was created in UTC but documented in local time.\n- A deployment changed the worker queue name, leaving the job without an eligible worker.\n- The job's service account credential expired before the scheduled run.\n- The job completed, but the report publication step failed.\n- An earlier run was still active and the concurrency policy blocked the next run."
+  },
+  {
+    "doc_id": "scheduled_job_missed_run",
+    "chunk_id": "scheduled_job_missed_run#005",
+    "heading": "Resolution And Verification",
+    "text": "Restore the schedule, worker routing, credential, or failed execution dependency. Run a controlled recovery only after checking duplicate and partial-output risks. Confirm that the expected output is complete, downstream recipients can access it, and the next scheduled run remains enabled."
+  },
+  {
+    "doc_id": "scheduled_job_missed_run",
+    "chunk_id": "scheduled_job_missed_run#006",
+    "heading": "Escalation",
+    "text": "Escalate to the job owner for code failures, idempotency decisions, or business validation. Escalate to the scheduling platform team when triggers, queues, or scheduler history are incorrect. Include the schedule expression, timezone, run IDs, last successful run, logs, business deadline, and recovery action."
+  },
+  {
+    "doc_id": "scheduled_job_missed_run",
+    "chunk_id": "scheduled_job_missed_run#007",
+    "heading": "Related Tickets",
+    "text": "- TCK-0259\n- TCK-0260"
+  },
+  {
+    "doc_id": "secrets_manager_access",
+    "chunk_id": "secrets_manager_access#001",
+    "heading": "Background",
+    "text": "Secrets manager access allows approved services and engineers to read or update sensitive configuration values."
+  },
+  {
+    "doc_id": "secrets_manager_access",
+    "chunk_id": "secrets_manager_access#002",
+    "heading": "Symptoms",
+    "text": "- The user cannot read a secret.\n- A deployment cannot retrieve runtime configuration.\n- Secret update permissions are denied."
+  },
+  {
+    "doc_id": "secrets_manager_access",
+    "chunk_id": "secrets_manager_access#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the secret name, environment, and requested action.\n2. Verify the access request approval.\n3. Check the user's role or service account policy.\n4. Confirm the secret exists in the expected region or project.\n5. Ask the user to retry after permission propagation."
+  },
+  {
+    "doc_id": "secrets_manager_access",
+    "chunk_id": "secrets_manager_access#004",
+    "heading": "Common Errors",
+    "text": "- Access denied\n- Secret not found\n- Permission propagation delay"
+  },
+  {
+    "doc_id": "secrets_manager_access",
+    "chunk_id": "secrets_manager_access#005",
+    "heading": "Escalation",
+    "text": "Escalate to platform security for production secret write access or emergency access."
+  },
+  {
+    "doc_id": "secrets_manager_access",
+    "chunk_id": "secrets_manager_access#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1065\n- TCK-1066"
+  },
+  {
+    "doc_id": "security_incident_report",
+    "chunk_id": "security_incident_report#001",
+    "heading": "Background",
+    "text": "Potential security incidents must be documented quickly and routed to the security operations team."
+  },
+  {
+    "doc_id": "security_incident_report",
+    "chunk_id": "security_incident_report#002",
+    "heading": "Symptoms",
+    "text": "- The user reports suspicious login activity.\n- A secret or token may have been exposed.\n- Malware or phishing is suspected."
+  },
+  {
+    "doc_id": "security_incident_report",
+    "chunk_id": "security_incident_report#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Collect the reporter, affected account, timestamp, and evidence.\n2. Do not delete suspicious messages or logs.\n3. Disable exposed credentials if approved by policy.\n4. Create a security incident ticket with high priority.\n5. Notify the security operations channel."
+  },
+  {
+    "doc_id": "security_incident_report",
+    "chunk_id": "security_incident_report#004",
+    "heading": "Common Errors",
+    "text": "- Missing evidence\n- Incorrect severity\n- Exposed credential not revoked"
+  },
+  {
+    "doc_id": "security_incident_report",
+    "chunk_id": "security_incident_report#005",
+    "heading": "Escalation",
+    "text": "Escalate immediately to security operations for credential exposure, malware, or account compromise."
+  },
+  {
+    "doc_id": "security_incident_report",
+    "chunk_id": "security_incident_report#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1037\n- TCK-1038"
+  },
+  {
+    "doc_id": "service_account_permission",
+    "chunk_id": "service_account_permission#001",
+    "heading": "Background",
+    "text": "Service accounts should have narrowly scoped permissions for applications, automation, and infrastructure jobs."
+  },
+  {
+    "doc_id": "service_account_permission",
+    "chunk_id": "service_account_permission#002",
+    "heading": "Symptoms",
+    "text": "- A workload cannot call an internal API.\n- Batch jobs fail with permission denied.\n- A deployment works in staging but fails in production."
+  },
+  {
+    "doc_id": "service_account_permission",
+    "chunk_id": "service_account_permission#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Identify the service account and target resource.\n2. Confirm the exact permission or role required.\n3. Check current role bindings.\n4. Apply the least privileged role after approval.\n5. Restart or redeploy the workload if credentials are cached."
+  },
+  {
+    "doc_id": "service_account_permission",
+    "chunk_id": "service_account_permission#004",
+    "heading": "Common Errors",
+    "text": "- Permission denied\n- Principal not found\n- Role binding missing"
+  },
+  {
+    "doc_id": "service_account_permission",
+    "chunk_id": "service_account_permission#005",
+    "heading": "Escalation",
+    "text": "Escalate to cloud platform if the required role does not exist or crosses account boundaries."
+  },
+  {
+    "doc_id": "service_account_permission",
+    "chunk_id": "service_account_permission#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1067\n- TCK-1068"
+  },
+  {
+    "doc_id": "shared_drive_access",
+    "chunk_id": "shared_drive_access#001",
+    "heading": "Background",
+    "text": "Shared drive access controls team documents, project files, and restricted business records."
+  },
+  {
+    "doc_id": "shared_drive_access",
+    "chunk_id": "shared_drive_access#002",
+    "heading": "Access Request Process",
+    "text": "To request shared drive access, the user should provide the shared drive or folder URL, the needed access level, and a business justification. Drive owner approval or manager approval is required before granting access. Access should use the minimum required role."
+  },
+  {
+    "doc_id": "shared_drive_access",
+    "chunk_id": "shared_drive_access#003",
+    "heading": "Symptoms",
+    "text": "- The user cannot open a shared folder.\n- A file link returns access denied.\n- The user can view but not edit a document."
+  },
+  {
+    "doc_id": "shared_drive_access",
+    "chunk_id": "shared_drive_access#004",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the shared drive or folder URL.\n2. Verify the user's business need and drive owner or manager approval.\n3. Check current group or direct permissions.\n4. Grant the minimum required role.\n5. Ask the user to refresh the page and retry access."
+  },
+  {
+    "doc_id": "shared_drive_access",
+    "chunk_id": "shared_drive_access#005",
+    "heading": "Common Errors",
+    "text": "- Access denied\n- File not found\n- Edit permission required"
+  },
+  {
+    "doc_id": "shared_drive_access",
+    "chunk_id": "shared_drive_access#006",
+    "heading": "Escalation",
+    "text": "Escalate to collaboration tools admin if ownership is unclear or restricted data is involved."
+  },
+  {
+    "doc_id": "shared_drive_access",
+    "chunk_id": "shared_drive_access#007",
+    "heading": "Related Tickets",
+    "text": "- TCK-1069\n- TCK-1070"
+  },
+  {
+    "doc_id": "slack_access_request",
+    "chunk_id": "slack_access_request#001",
+    "heading": "Background",
+    "text": "Slack workspace and channel access should be granted based on business need and approval."
+  },
+  {
+    "doc_id": "slack_access_request",
+    "chunk_id": "slack_access_request#002",
+    "heading": "Symptoms",
+    "text": "- The user cannot join the workspace.\n- A private channel is not visible.\n- Slack SSO login fails."
+  },
+  {
+    "doc_id": "slack_access_request",
+    "chunk_id": "slack_access_request#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the workspace and channel name.\n2. Verify the user's employment status and identity group.\n3. Check whether the channel is private or restricted.\n4. Ask the channel owner to approve access if needed.\n5. Reinvite the user or refresh SSO assignment."
+  },
+  {
+    "doc_id": "slack_access_request",
+    "chunk_id": "slack_access_request#004",
+    "heading": "Common Errors",
+    "text": "- User not invited\n- Channel not found\n- SSO assignment missing"
+  },
+  {
+    "doc_id": "slack_access_request",
+    "chunk_id": "slack_access_request#005",
+    "heading": "Escalation",
+    "text": "Escalate to collaboration tools admin if workspace invitation or SSO assignment fails."
+  },
+  {
+    "doc_id": "slack_access_request",
+    "chunk_id": "slack_access_request#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1039\n- TCK-1040"
+  },
+  {
+    "doc_id": "software_install_request",
+    "chunk_id": "software_install_request#001",
+    "heading": "Background",
+    "text": "Software installation requests must be checked for approval, licensing, security review, and device compatibility."
+  },
+  {
+    "doc_id": "software_install_request",
+    "chunk_id": "software_install_request#002",
+    "heading": "Symptoms",
+    "text": "- The user cannot install an application.\n- The software is blocked by endpoint policy.\n- A license prompt appears after installation."
+  },
+  {
+    "doc_id": "software_install_request",
+    "chunk_id": "software_install_request#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the software name, version, and business justification.\n2. Check whether the software is in the approved catalog.\n3. Verify license availability.\n4. Install through the approved device management portal.\n5. Ask the user to restart the application after installation."
+  },
+  {
+    "doc_id": "software_install_request",
+    "chunk_id": "software_install_request#004",
+    "heading": "Common Errors",
+    "text": "- Installer blocked\n- License not available\n- Application not approved"
+  },
+  {
+    "doc_id": "software_install_request",
+    "chunk_id": "software_install_request#005",
+    "heading": "Escalation",
+    "text": "Escalate to software asset management if the software needs purchase or security approval."
+  },
+  {
+    "doc_id": "software_install_request",
+    "chunk_id": "software_install_request#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1043\n- TCK-1044"
+  },
+  {
+    "doc_id": "sso_login_troubleshooting",
+    "chunk_id": "sso_login_troubleshooting#001",
+    "heading": "Background",
+    "text": "Single sign-on failures are commonly caused by stale sessions, missing app assignments, MFA issues, or identity provider outages."
+  },
+  {
+    "doc_id": "sso_login_troubleshooting",
+    "chunk_id": "sso_login_troubleshooting#002",
+    "heading": "Symptoms",
+    "text": "- The user is redirected back to the login page.\n- The application says the user is not assigned.\n- MFA succeeds but the application still denies access."
+  },
+  {
+    "doc_id": "sso_login_troubleshooting",
+    "chunk_id": "sso_login_troubleshooting#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Ask the user to clear browser cache and cookies.\n2. Confirm the user is assigned to the application.\n3. Verify MFA enrollment is complete.\n4. Check the identity provider status page.\n5. Retry login in an incognito window."
+  },
+  {
+    "doc_id": "sso_login_troubleshooting",
+    "chunk_id": "sso_login_troubleshooting#004",
+    "heading": "Common Errors",
+    "text": "- Invalid SAML response\n- User not assigned to application\n- MFA challenge expired"
+  },
+  {
+    "doc_id": "sso_login_troubleshooting",
+    "chunk_id": "sso_login_troubleshooting#005",
+    "heading": "Escalation",
+    "text": "Escalate to identity engineering if multiple users are affected or the identity provider reports an outage."
+  },
+  {
+    "doc_id": "sso_login_troubleshooting",
+    "chunk_id": "sso_login_troubleshooting#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1041\n- TCK-1042"
+  },
+  {
+    "doc_id": "tls_certificate_warning",
+    "chunk_id": "tls_certificate_warning#001",
+    "heading": "Background",
+    "text": "TLS certificates allow clients to verify a service's identity and establish encrypted connections. Browsers and command-line clients may show a certificate warning when a certificate is expired, issued for another hostname, signed by an untrusted authority, missing an intermediate certificate, or presented by an unexpected proxy.\n\nCertificate warnings should not be bypassed as a routine troubleshooting step. A warning can indicate a deployment mistake, incomplete certificate rotation, traffic reaching the wrong endpoint, or an active security risk. Support should record the observed certificate metadata without sharing private keys or secret-store values."
+  },
+  {
+    "doc_id": "tls_certificate_warning",
+    "chunk_id": "tls_certificate_warning#002",
+    "heading": "Symptoms",
+    "text": "- A browser reports that the connection is not private.\n- Clients report an expired certificate or hostname mismatch.\n- Some devices trust the service while others reject it.\n- One load balancer or region presents a different certificate.\n- Automated clients fail after a certificate rotation."
+  },
+  {
+    "doc_id": "tls_certificate_warning",
+    "chunk_id": "tls_certificate_warning#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Record the requested hostname, port, environment, first failure time, affected clients, and exact validation error. Confirm whether the user followed an official link and stop if the hostname is unexpected.\n2. Inspect the certificate presented by the affected endpoint. Record its subject, subject alternative names, issuer, serial number, validity period, and fingerprint. Never collect or expose a private key.\n3. Verify that the requested hostname appears in the subject alternative names. A valid certificate for a different hostname must still be rejected.\n4. Check the entire certificate chain. Older devices may fail when the server omits an intermediate certificate even though modern browsers build the chain from a local cache.\n5. Compare results across regions, load balancer targets, and network paths. A partial rotation may leave one endpoint serving the old certificate.\n6. Review recent certificate, DNS, proxy, ingress, and load balancer changes. Confirm that the certificate was deployed to the correct listener and environment.\n7. Check client time only when the validity error is inconsistent across devices. A badly incorrect clock can make a valid certificate appear expired or not yet valid.\n8. Replace or redeploy the approved certificate through the normal secret and certificate process. Do not disable verification, install an unknown root certificate, or copy private keys into tickets."
+  },
+  {
+    "doc_id": "tls_certificate_warning",
+    "chunk_id": "tls_certificate_warning#004",
+    "heading": "Common Findings",
+    "text": "- One load balancer target still served the certificate from before rotation.\n- The certificate covered the base domain but not the requested subdomain.\n- The server did not send the required intermediate certificate.\n- An internal certificate authority was missing from a newly managed device.\n- DNS directed users to an old environment with an expired certificate."
+  },
+  {
+    "doc_id": "tls_certificate_warning",
+    "chunk_id": "tls_certificate_warning#005",
+    "heading": "Resolution And Verification",
+    "text": "Deploy the correct certificate and full chain to every serving endpoint. Test the official hostname from affected network paths and confirm the expected issuer, hostname, validity period, and fingerprint. Monitor TLS handshake errors and verify that automated clients recover without disabling validation."
+  },
+  {
+    "doc_id": "tls_certificate_warning",
+    "chunk_id": "tls_certificate_warning#006",
+    "heading": "Escalation",
+    "text": "Escalate to the certificate or platform owner for deployment and renewal failures. Contact Network Engineering when DNS, proxy, or load-balancer routing presents the wrong endpoint. Escalate immediately to Security Operations if users are redirected to an unexpected hostname or the certificate suggests possible interception."
+  },
+  {
+    "doc_id": "tls_certificate_warning",
+    "chunk_id": "tls_certificate_warning#007",
+    "heading": "Related Tickets",
+    "text": "- TCK-0261\n- TCK-0262"
+  },
+  {
+    "doc_id": "vpn_connection_failed",
+    "chunk_id": "vpn_connection_failed#001",
+    "heading": "Background",
+    "text": "VPN connection failures may prevent users from reaching internal systems and developer environments."
+  },
+  {
+    "doc_id": "vpn_connection_failed",
+    "chunk_id": "vpn_connection_failed#002",
+    "heading": "Symptoms",
+    "text": "- The VPN client cannot connect.\n- Internal sites fail only when offsite.\n- The VPN disconnects shortly after login."
+  },
+  {
+    "doc_id": "vpn_connection_failed",
+    "chunk_id": "vpn_connection_failed#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the user has internet access.\n2. Confirm the user is using valid VPN credentials or SSO credentials.\n3. Ask the user to restart the VPN client.\n4. Verify MFA enrollment and SSO login.\n5. Check the VPN service status page.\n6. Reinstall the VPN profile if the client reports configuration errors."
+  },
+  {
+    "doc_id": "vpn_connection_failed",
+    "chunk_id": "vpn_connection_failed#004",
+    "heading": "Common Errors",
+    "text": "- Authentication failed\n- Profile not found\n- Gateway unavailable"
+  },
+  {
+    "doc_id": "vpn_connection_failed",
+    "chunk_id": "vpn_connection_failed#005",
+    "heading": "Escalation",
+    "text": "Escalate to network engineering if many users cannot connect to the same gateway."
+  },
+  {
+    "doc_id": "vpn_connection_failed",
+    "chunk_id": "vpn_connection_failed#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1045\n- TCK-1046"
+  },
+  {
+    "doc_id": "vpn_setup",
+    "chunk_id": "vpn_setup#001",
+    "heading": "Background",
+    "text": "Users need the approved VPN client and profile to access internal resources from outside the corporate network."
+  },
+  {
+    "doc_id": "vpn_setup",
+    "chunk_id": "vpn_setup#002",
+    "heading": "Symptoms",
+    "text": "- The user cannot access internal sites from home.\n- The VPN client is missing.\n- The VPN profile has not been installed."
+  },
+  {
+    "doc_id": "vpn_setup",
+    "chunk_id": "vpn_setup#003",
+    "heading": "Troubleshooting Steps",
+    "text": "1. Confirm the user's device is enrolled and compliant.\n2. Install the approved VPN client from the device management portal.\n3. Download the corporate VPN profile.\n4. Sign in with SSO and complete MFA.\n5. Test access to an internal status page."
+  },
+  {
+    "doc_id": "vpn_setup",
+    "chunk_id": "vpn_setup#004",
+    "heading": "Common Errors",
+    "text": "- VPN profile missing\n- Device not compliant\n- MFA challenge failed"
+  },
+  {
+    "doc_id": "vpn_setup",
+    "chunk_id": "vpn_setup#005",
+    "heading": "Escalation",
+    "text": "Escalate to network engineering if the approved profile installs but cannot connect."
+  },
+  {
+    "doc_id": "vpn_setup",
+    "chunk_id": "vpn_setup#006",
+    "heading": "Related Tickets",
+    "text": "- TCK-1047\n- TCK-1048"
+  }
+]

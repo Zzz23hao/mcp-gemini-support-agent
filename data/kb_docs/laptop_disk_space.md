@@ -11,9 +11,10 @@ Low disk space can prevent updates, builds, and security tools from running corr
 ## Troubleshooting Steps
 1. Ask the user to check available disk space.
 2. Remove old downloads, logs, and temporary files.
-3. Clear package manager caches.
-4. Move large personal files to approved storage.
-5. Reboot and retry the failed operation.
+3. Empty the Recycle Bin or Trash to permanently free deleted file space.
+4. Clear package manager caches.
+5. Move large personal files to approved storage.
+6. Reboot and retry the failed operation.
 
 ## Common Errors
 - No space left on device

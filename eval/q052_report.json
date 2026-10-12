@@ -1,0 +1,113 @@
+{
+  "generated_at": "2026-07-07T23:35:38.477332+00:00",
+  "agent_url": "http://127.0.0.1:8003",
+  "questions_path": "/Users/macbook/Documents/Playground/mcp-gemini-support-agent/src/eval/questions.jsonl",
+  "filters": {
+    "categories": null,
+    "ids": [
+      "q052"
+    ],
+    "limit": null
+  },
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "blocked_by_quota": 0,
+    "blocked_by_provider": 0,
+    "pass_rate": 1.0,
+    "quality_total_excluding_quota": 1,
+    "quality_passed_excluding_quota": 1,
+    "quality_failed_excluding_quota": 0,
+    "quality_pass_rate_excluding_quota": 1.0,
+    "average_latency_ms": 5244.0,
+    "by_category": {
+      "edge_case": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "q052",
+      "category": "edge_case",
+      "query": "I cannot log in and VPN also fails. What should I check first?",
+      "status_code": 200,
+      "ok": true,
+      "latency_ms": 5244,
+      "trace_id": "ec43d83e2b6d4d2ab796128e5424f864",
+      "tool_calls_count": 1,
+      "tool_names": [
+        "search_kb"
+      ],
+      "has_citations": true,
+      "citations_count": 8,
+      "citations": [
+        {
+          "doc_id": "vpn_connection_failed",
+          "chunk_id": "vpn_connection_failed#003",
+          "quote": "1. Confirm the user has internet access."
+        },
+        {
+          "doc_id": "vpn_connection_failed",
+          "chunk_id": "vpn_connection_failed#003",
+          "quote": "2. Confirm the user is using valid VPN credentials or SSO credentials."
+        },
+        {
+          "doc_id": "vpn_connection_failed",
+          "chunk_id": "vpn_connection_failed#003",
+          "quote": "3. Ask the user to restart the VPN client."
+        },
+        {
+          "doc_id": "vpn_connection_failed",
+          "chunk_id": "vpn_connection_failed#003",
+          "quote": "4. Verify MFA enrollment and SSO login."
+        },
+        {
+          "doc_id": "vpn_connection_failed",
+          "chunk_id": "vpn_connection_failed#003",
+          "quote": "5. Check the VPN service status page."
+        },
+        {
+          "doc_id": "sso_login_troubleshooting",
+          "chunk_id": "sso_login_troubleshooting#003",
+          "quote": "1. Ask the user to clear browser cache and cookies."
+        },
+        {
+          "doc_id": "sso_login_troubleshooting",
+          "chunk_id": "sso_login_troubleshooting#003",
+          "quote": "4. Check the identity provider status page."
+        },
+        {
+          "doc_id": "sso_login_troubleshooting",
+          "chunk_id": "sso_login_troubleshooting#003",
+          "quote": "5. Retry login in an incognito window."
+        }
+      ],
+      "answer_length": 505,
+      "answer": "When you cannot log in and VPN also fails, you should first check a few things. Start by confirming you have internet access. Then, verify you are using valid VPN credentials or SSO credentials and try restarting your VPN client. Also, confirm your MFA enrollment is complete. You should also check the VPN service status page and the identity provider status page for any outages. If issues persist, try clearing your browser cache and cookies, and attempt to log in using an incognito or private window.",
+      "answer_snippet": "When you cannot log in and VPN also fails, you should first check a few things. Start by confirming you have internet access. Then, verify you are using valid VPN credentials or SSO credentials and try restarting your VPN client. Also, confirm your MFA enrollment is complete. You should also check the VPN service status page and the identity provider status page for any outages. If issues persist, try clearing your browser cache and cookies, and attempt to log in using an incognito or private window.",
+      "must_include": [
+        "SSO",
+        "VPN",
+        "MFA"
+      ],
+      "matched_must_include": [
+        "SSO",
+        "VPN",
+        "MFA"
+      ],
+      "missing_must_include": [],
+      "blocked_by_quota": false,
+      "blocked_by_provider": false,
+      "must_cite": true,
+      "citation_check_passed": true,
+      "expect_ticket_draft": false,
+      "ticket_draft_created": false,
+      "ticket_draft_check_passed": true,
+      "error": null
+    }
+  ]
+}

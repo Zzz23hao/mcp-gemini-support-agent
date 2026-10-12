@@ -9,7 +9,7 @@ CI pipeline failures can block deployments and pull request merges when tests, b
 - Deployment jobs stop before release.
 
 ## Troubleshooting Steps
-1. Identify the failed job and exact step.
+1. Review the failed job logs and identify the exact failing step.
 2. Compare the CI runtime version with the local environment.
 3. Check recent dependency or lockfile changes.
 4. Rerun the job once to rule out transient infrastructure errors.

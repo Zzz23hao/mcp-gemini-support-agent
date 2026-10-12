@@ -3,6 +3,9 @@
 ## Background
 Teams need access to logs to debug services, but production log access must follow privacy and security rules.
 
+## Access Request Process
+Log access requests should include the service name, environment, requested log scope, business justification, and duration of access. Production logging access requires manager approval or service owner approval before the user is added to the approved logging group.
+
 ## Symptoms
 - The user cannot open the logging dashboard.
 - Queries return permission denied.

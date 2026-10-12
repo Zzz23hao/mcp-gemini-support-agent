@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+data/session_memory.json
+src/*.egg-info/
+data/kb_index/chroma/
+data/agent_traces.jsonl
+src/*.egg-info/
+data/kb_index/chroma/
+data/agent_traces.jsonl

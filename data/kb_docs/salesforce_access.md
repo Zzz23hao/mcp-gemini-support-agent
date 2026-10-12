@@ -3,6 +3,9 @@
 ## Background
 Salesforce access is controlled by identity groups, profiles, permission sets, and licensing.
 
+## Access Request Process
+New Salesforce access requires business justification and manager or application owner approval before a license, profile, or permission set is assigned. Approval should be captured before changing identity group membership or granting elevated permissions.
+
 ## Symptoms
 - The user cannot log in to Salesforce.
 - A required object or field is missing.
@@ -10,10 +13,11 @@ Salesforce access is controlled by identity groups, profiles, permission sets, a
 
 ## Troubleshooting Steps
 1. Confirm the user's role and business justification.
-2. Check Salesforce license assignment.
-3. Verify identity group membership.
-4. Review profile and permission set assignments.
-5. Ask the user to refresh the session and retry.
+2. Confirm manager or application owner approval for the requested access.
+3. Check Salesforce license assignment.
+4. Verify identity group membership.
+5. Review profile and permission set assignments.
+6. Ask the user to refresh the session and retry.
 
 ## Common Errors
 - Insufficient privileges

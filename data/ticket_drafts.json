@@ -1,0 +1,957 @@
+[
+  {
+    "draft_id": "DRAFT-0001",
+    "title": "Software Installation Approval",
+    "description": "The user needs approval to install software on their laptop.",
+    "priority": "medium",
+    "tags": [
+      "software",
+      "installation",
+      "approval"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0002",
+    "title": "VPN down for multiple remote employees",
+    "description": "Several remote employees are reporting that the VPN is down after standard troubleshooting checks have been performed. This is impacting their ability to work remotely.",
+    "priority": "high",
+    "tags": [
+      "vpn"
+    ],
+    "assigned_group": "Network Team",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0003",
+    "title": "VPN down for multiple remote employees",
+    "description": "Several remote employees are reporting that the VPN is down. Standard troubleshooting steps have been performed, but the issue persists, affecting multiple users' ability to connect and work remotely.",
+    "priority": "high",
+    "tags": [
+      "vpn"
+    ],
+    "assigned_group": "Network Team",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0004",
+    "title": "VPN down for multiple remote employees",
+    "description": "VPN is down for several remote employees after standard checks have been performed. This is impacting their ability to work remotely.",
+    "priority": "high",
+    "tags": [
+      "vpn",
+      "outage",
+      "remote-access"
+    ],
+    "assigned_group": "Network Team",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0005",
+    "title": "Multiple users unable to log in via SSO after troubleshooting",
+    "description": "Users are reporting an inability to log in via SSO. Troubleshooting steps have been attempted without success. Multiple users are affected, indicating a broader issue.",
+    "priority": "High",
+    "tags": [
+      "sso",
+      "login"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0006",
+    "title": "VPN down for several remote employees",
+    "description": "The VPN is reported to be down for multiple remote employees. Standard troubleshooting checks have already been performed by the users. This is impacting their ability to work remotely.",
+    "priority": "high",
+    "tags": [
+      "vpn"
+    ],
+    "assigned_group": "Network Team",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0007",
+    "title": "Multiple users cannot log in with SSO after troubleshooting",
+    "description": "User reported that multiple users are unable to log in with SSO, even after following the provided troubleshooting steps. Further investigation is required.",
+    "priority": "high",
+    "tags": [
+      "sso",
+      "login"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0008",
+    "title": "Kubernetes Pods Crashlooping After Failed Rollback",
+    "description": "Kubernetes pods are continuously crashlooping. A recent rollback attempt did not resolve the issue, indicating a deeper problem. This is impacting service availability.",
+    "priority": "High",
+    "tags": [
+      "kubernetes",
+      "crashloop",
+      "rollback"
+    ],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0009",
+    "title": "Suspected Security Incident Reported by User",
+    "description": "A user has reported a suspected security incident. Further investigation is required to determine the nature and scope of the incident. No specific evidence was provided in the initial report.",
+    "priority": "high",
+    "tags": [
+      "security",
+      "incident"
+    ],
+    "assigned_group": "Security Operations",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0010",
+    "title": "Identity Provider Outage - Users Cannot Authenticate",
+    "description": "The identity provider status page reports an outage, preventing users from authenticating. This is a critical issue impacting all users.",
+    "priority": "urgent",
+    "tags": [
+      "sso",
+      "outage"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0011",
+    "title": "TLS Certificate Warning Affecting Production Customers",
+    "description": "A TLS certificate warning is currently affecting customers in production. This issue requires urgent investigation and resolution to prevent further customer impact.",
+    "priority": "urgent",
+    "tags": [
+      "tls",
+      "certificate"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0012",
+    "title": "VPN down for multiple remote employees",
+    "description": "VPN is down for several remote employees after standard checks have been performed. Further investigation by the network team is required.",
+    "priority": "high",
+    "tags": [
+      "vpn"
+    ],
+    "assigned_group": "Network Team",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0013",
+    "title": "Suspected Security Incident Reported",
+    "description": "A suspected security incident was reported by a user. Further investigation is required.",
+    "priority": "high",
+    "tags": [
+      "security",
+      "incident"
+    ],
+    "assigned_group": "Security Team",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0014",
+    "title": "Identity Provider Outage: Users Cannot Authenticate",
+    "description": "The identity provider status page reports an outage, preventing users from authenticating.",
+    "priority": "urgent",
+    "tags": [
+      "sso",
+      "outage"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0015",
+    "title": "TLS Certificate Warning Affecting Production Customers",
+    "description": "Customers are experiencing TLS certificate warnings in production. Further investigation is needed to identify the specific certificate, service, and impact. This issue is affecting customers in a production environment.",
+    "priority": "Urgent",
+    "tags": [
+      "TLS",
+      "certificate",
+      "production",
+      "customer_impact"
+    ],
+    "assigned_group": "SRE",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0016",
+    "title": "I tried the SSO troubleshooting steps and still cannot log in. Multiple users are affec...",
+    "description": "I tried the SSO troubleshooting steps and still cannot log in. Multiple users are affected. Please create a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Identity Operations",
+    "evidence_ids": [
+      "sso_login_troubleshooting#003",
+      "sso_login_troubleshooting#001",
+      "sso_login_troubleshooting#002",
+      "sso_login_troubleshooting#004",
+      "sso_login_troubleshooting#005",
+      "sso_login_troubleshooting#006",
+      "aws_account_access#003",
+      "github_org_access#004"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0017",
+    "title": "VPN Outage for Remote Employees",
+    "description": "Several remote employees are reporting VPN is down after performing standard checks. This is impacting their ability to work.",
+    "priority": "High",
+    "tags": [
+      "vpn",
+      "outage"
+    ],
+    "assigned_group": "Network Team",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0018",
+    "title": "The production database connection is timing out after firewall checks. Please prepare...",
+    "description": "The production database connection is timing out after firewall checks. Please prepare a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Database Operations",
+    "evidence_ids": [
+      "database_connection_issue#001",
+      "database_connection_issue#002",
+      "database_connection_issue#003",
+      "database_connection_issue#004",
+      "database_connection_issue#005",
+      "database_connection_issue#006",
+      "network_firewall_request#002",
+      "network_firewall_request#004"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0019",
+    "title": "Kubernetes pods are crashlooping after rollback did not help. Create a ticket draft for...",
+    "description": "Kubernetes pods are crashlooping after rollback did not help. Create a ticket draft for platform engineering.",
+    "priority": "medium",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "kubernetes_pod_crashloop#001",
+      "kubernetes_pod_crashloop#002",
+      "kubernetes_pod_crashloop#003",
+      "kubernetes_pod_crashloop#004",
+      "kubernetes_pod_crashloop#005",
+      "kubernetes_pod_crashloop#006"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0020",
+    "title": "A suspected security incident was reported by a user. Create a high-priority ticket dra...",
+    "description": "A suspected security incident was reported by a user. Create a high-priority ticket draft with the evidence.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Security Operations",
+    "evidence_ids": [
+      "security_incident_report#001",
+      "security_incident_report#002",
+      "security_incident_report#003",
+      "security_incident_report#004",
+      "security_incident_report#005",
+      "security_incident_report#006",
+      "escalation_policy#005",
+      "oauth_application_login_failure#007"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0021",
+    "title": "Identity Provider Outage - Users Cannot Authenticate",
+    "description": "The identity provider status page reports an outage, and users are unable to authenticate.",
+    "priority": "urgent",
+    "tags": [
+      "identity-provider",
+      "authentication",
+      "outage"
+    ],
+    "assigned_group": "Identity Management",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0022",
+    "title": "TLS certificate warning affecting production customers",
+    "description": "A TLS certificate warning is currently affecting customers in production, indicating a potential service disruption or security concern.",
+    "priority": "urgent",
+    "tags": [
+      "tls",
+      "certificate",
+      "production",
+      "security"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0023",
+    "title": "CI pipeline blocking all pull requests and reruns failed",
+    "description": "The CI pipeline is blocking all pull requests and reruns failed.",
+    "priority": "urgent",
+    "tags": [
+      "CI",
+      "pipeline",
+      "PR",
+      "blocker"
+    ],
+    "assigned_group": "Developer Productivity",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0024",
+    "title": "Data Pipeline Delay Causing Missed Reporting Deadlines",
+    "description": "A data pipeline delay is currently impacting reporting, leading to missed deadlines.",
+    "priority": "high",
+    "tags": [
+      "data-pipeline",
+      "reporting"
+    ],
+    "assigned_group": "data platform",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0025",
+    "title": "An internal API is returning rate limit errors for a production service. Please prepare...",
+    "description": "An internal API is returning rate limit errors for a production service. Please prepare a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "internal_api_rate_limit#003",
+      "internal_api_rate_limit#004",
+      "internal_api_rate_limit#001",
+      "internal_api_rate_limit#002",
+      "internal_api_rate_limit#005",
+      "internal_api_rate_limit#006",
+      "internal_api_rate_limit#007",
+      "api_key_rotation#002"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0026",
+    "title": "SSO login issue affecting multiple users",
+    "description": "Multiple users are unable to log in via SSO even after trying troubleshooting steps.",
+    "priority": "high",
+    "tags": [
+      "sso",
+      "login"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0027",
+    "title": "VPN down for remote employees",
+    "description": "VPN is down for several remote employees after standard checks have been performed. This is impacting their ability to work remotely.",
+    "priority": "high",
+    "tags": [
+      "VPN"
+    ],
+    "assigned_group": "Network Team",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0028",
+    "title": "The production database connection is timing out after firewall checks. Please prepare...",
+    "description": "The production database connection is timing out after firewall checks. Please prepare a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Database Operations",
+    "evidence_ids": [
+      "database_connection_issue#001",
+      "database_connection_issue#002",
+      "database_connection_issue#003",
+      "database_connection_issue#004",
+      "database_connection_issue#005",
+      "database_connection_issue#006",
+      "network_firewall_request#002",
+      "network_firewall_request#004"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0029",
+    "title": "Kubernetes pods are crashlooping after rollback did not help. Create a ticket draft for...",
+    "description": "Kubernetes pods are crashlooping after rollback did not help. Create a ticket draft for platform engineering.",
+    "priority": "medium",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "production_deployment_rollback#002",
+      "production_deployment_rollback#003",
+      "production_deployment_rollback#005",
+      "kubernetes_pod_crashloop#001",
+      "kubernetes_pod_crashloop#002",
+      "kubernetes_pod_crashloop#003",
+      "kubernetes_pod_crashloop#004",
+      "kubernetes_pod_crashloop#005"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0030",
+    "title": "A suspected security incident was reported by a user. Create a high-priority ticket dra...",
+    "description": "A suspected security incident was reported by a user. Create a high-priority ticket draft with the evidence.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Security Operations",
+    "evidence_ids": [
+      "security_incident_report#001",
+      "security_incident_report#002",
+      "security_incident_report#003",
+      "security_incident_report#004",
+      "security_incident_report#005",
+      "security_incident_report#006",
+      "escalation_policy#005",
+      "oauth_application_login_failure#007"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0031",
+    "title": "Identity Provider Outage - Users Cannot Authenticate",
+    "description": "The identity provider status page reports an outage, and users are unable to authenticate to various services.",
+    "priority": "urgent",
+    "tags": [
+      "identity_provider",
+      "outage",
+      "authentication"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0032",
+    "title": "TLS Certificate Warning Affecting Production",
+    "description": "Customers are experiencing a TLS certificate warning in production.",
+    "priority": "urgent",
+    "tags": [
+      "tls",
+      "certificate",
+      "production"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0033",
+    "title": "The CI pipeline is blocking all pull requests and reruns failed. Create a ticket draft...",
+    "description": "The CI pipeline is blocking all pull requests and reruns failed. Create a ticket draft for developer productivity.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Developer Productivity",
+    "evidence_ids": [
+      "ci_pipeline_failure#002",
+      "ci_pipeline_failure#001",
+      "ci_pipeline_failure#003",
+      "ci_pipeline_failure#004",
+      "ci_pipeline_failure#005",
+      "ci_pipeline_failure#006",
+      "data_pipeline_processing_delay#003",
+      "data_pipeline_processing_delay#001"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0034",
+    "title": "Data Pipeline Delay Causing Missed Reporting Deadlines",
+    "description": "A data pipeline delay is impacting reporting, leading to missed deadlines.",
+    "priority": "high",
+    "tags": [
+      "data pipeline",
+      "reporting",
+      "delay"
+    ],
+    "assigned_group": "data platform",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0035",
+    "title": "An internal API is returning rate limit errors for a production service. Please prepare...",
+    "description": "An internal API is returning rate limit errors for a production service. Please prepare a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "internal_api_rate_limit#003",
+      "internal_api_rate_limit#004",
+      "internal_api_rate_limit#001",
+      "internal_api_rate_limit#002",
+      "internal_api_rate_limit#005",
+      "internal_api_rate_limit#006",
+      "internal_api_rate_limit#007",
+      "api_key_rotation#002"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0036",
+    "title": "I tried the SSO troubleshooting steps and still cannot log in. Multiple users are affec...",
+    "description": "I tried the SSO troubleshooting steps and still cannot log in. Multiple users are affected. Please create a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Identity Operations",
+    "evidence_ids": [
+      "sso_login_troubleshooting#005",
+      "sso_login_troubleshooting#003",
+      "sso_login_troubleshooting#001",
+      "sso_login_troubleshooting#002",
+      "sso_login_troubleshooting#004",
+      "sso_login_troubleshooting#006",
+      "oauth_application_login_failure#002",
+      "aws_account_access#003"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0037",
+    "title": "VPN down for several remote employees",
+    "description": "Several remote employees are experiencing VPN connectivity issues after standard checks have been performed. This is impacting multiple users.",
+    "priority": "High",
+    "tags": [
+      "vpn"
+    ],
+    "assigned_group": "Network Team",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0038",
+    "title": "Production Database Connection Timeout After Firewall Checks",
+    "description": "The production database connection is timing out after firewall checks.",
+    "priority": "urgent",
+    "tags": [
+      "database",
+      "firewall"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0039",
+    "title": "Kubernetes pods are crashlooping after rollback did not help. Create a ticket draft for...",
+    "description": "Kubernetes pods are crashlooping after rollback did not help. Create a ticket draft for platform engineering.",
+    "priority": "medium",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "kubernetes_pod_crashloop#001",
+      "kubernetes_pod_crashloop#002",
+      "kubernetes_pod_crashloop#003",
+      "kubernetes_pod_crashloop#004",
+      "kubernetes_pod_crashloop#005",
+      "kubernetes_pod_crashloop#006"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0040",
+    "title": "A suspected security incident was reported by a user. Create a high-priority ticket dra...",
+    "description": "A suspected security incident was reported by a user. Create a high-priority ticket draft with the evidence.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Security Operations",
+    "evidence_ids": [
+      "security_incident_report#001",
+      "security_incident_report#002",
+      "security_incident_report#003",
+      "security_incident_report#004",
+      "security_incident_report#005",
+      "security_incident_report#006",
+      "api_key_rotation#002",
+      "data_pipeline_processing_delay#003"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0041",
+    "title": "Identity Provider Outage - Users Cannot Authenticate",
+    "description": "The identity provider status page reports an outage, and users are currently unable to authenticate.",
+    "priority": "urgent",
+    "tags": [
+      "identity_provider",
+      "outage",
+      "authentication"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0042",
+    "title": "A TLS certificate warning is affecting customers in production. Please create a ticket...",
+    "description": "A TLS certificate warning is affecting customers in production. Please create a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "tls_certificate_warning#001",
+      "tls_certificate_warning#002",
+      "tls_certificate_warning#003",
+      "tls_certificate_warning#004",
+      "tls_certificate_warning#005",
+      "tls_certificate_warning#006",
+      "tls_certificate_warning#007",
+      "oauth_application_login_failure#004"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0043",
+    "title": "The CI pipeline is blocking all pull requests and reruns failed. Create a ticket draft...",
+    "description": "The CI pipeline is blocking all pull requests and reruns failed. Create a ticket draft for developer productivity.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Developer Productivity",
+    "evidence_ids": [
+      "ci_pipeline_failure#002",
+      "ci_pipeline_failure#001",
+      "ci_pipeline_failure#003",
+      "ci_pipeline_failure#004",
+      "ci_pipeline_failure#005",
+      "ci_pipeline_failure#006",
+      "data_pipeline_processing_delay#003",
+      "data_pipeline_processing_delay#001"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0044",
+    "title": "Data Pipeline Delay Causing Missed Reporting Deadlines",
+    "description": "A data pipeline delay is causing missed reporting deadlines.",
+    "priority": "high",
+    "tags": [
+      "data pipeline",
+      "reporting"
+    ],
+    "assigned_group": "Data Platform",
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0045",
+    "title": "Internal API Rate Limit Errors for Production Service",
+    "description": "An internal API is returning rate limit errors for a production service, impacting its functionality.",
+    "priority": "high",
+    "tags": [
+      "api",
+      "rate-limit",
+      "production"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0046",
+    "title": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ti...",
+    "description": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ticket, just tell me what escalation would require.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Identity Operations",
+    "evidence_ids": [
+      "sso_login_troubleshooting#005",
+      "sso_login_troubleshooting#001",
+      "escalation_policy#005",
+      "slack_access_request#005",
+      "sso_login_troubleshooting#002",
+      "sso_login_troubleshooting#003",
+      "sso_login_troubleshooting#004",
+      "sso_login_troubleshooting#006"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0047",
+    "title": "A production API is rate limited but I only want troubleshooting guidance, not a ticket...",
+    "description": "A production API is rate limited but I only want troubleshooting guidance, not a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "internal_api_rate_limit#003",
+      "internal_api_rate_limit#001",
+      "internal_api_rate_limit#002",
+      "internal_api_rate_limit#004",
+      "internal_api_rate_limit#005",
+      "internal_api_rate_limit#006",
+      "internal_api_rate_limit#007",
+      "api_key_rotation#003"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0048",
+    "title": "Please create a ticket draft for a TLS certificate warning affecting production customers.",
+    "description": "Please create a ticket draft for a TLS certificate warning affecting production customers.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "tls_certificate_warning#001",
+      "tls_certificate_warning#002",
+      "tls_certificate_warning#003",
+      "tls_certificate_warning#004",
+      "tls_certificate_warning#005",
+      "tls_certificate_warning#006",
+      "tls_certificate_warning#007",
+      "oauth_application_login_failure#004"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0049",
+    "title": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ti...",
+    "description": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ticket, just tell me what escalation would require.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Identity Operations",
+    "evidence_ids": [
+      "sso_login_troubleshooting#005",
+      "browser_cache_issue#005",
+      "escalation_policy#002",
+      "data_pipeline_processing_delay#007",
+      "logging_access#006",
+      "remote_desktop_access#005",
+      "slack_access_request#005",
+      "sso_login_troubleshooting#001"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0050",
+    "title": "A production API is rate limited but I only want troubleshooting guidance, not a ticket...",
+    "description": "A production API is rate limited but I only want troubleshooting guidance, not a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "internal_api_rate_limit#003",
+      "internal_api_rate_limit#001",
+      "internal_api_rate_limit#002",
+      "internal_api_rate_limit#004",
+      "internal_api_rate_limit#005",
+      "internal_api_rate_limit#006",
+      "internal_api_rate_limit#007",
+      "api_key_rotation#003"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0051",
+    "title": "TLS certificate warning affecting production customers",
+    "description": "A TLS certificate warning is impacting production customers. This issue needs urgent attention to prevent service disruption and maintain customer trust.",
+    "priority": "urgent",
+    "tags": [
+      "tls",
+      "certificate",
+      "production"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0052",
+    "title": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ti...",
+    "description": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ticket, just tell me what escalation would require.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Identity Operations",
+    "evidence_ids": [
+      "sso_login_troubleshooting#005",
+      "sso_login_troubleshooting#003",
+      "browser_cache_issue#005",
+      "escalation_policy#002",
+      "aws_account_access#003",
+      "data_pipeline_processing_delay#007",
+      "escalation_policy#003",
+      "github_org_access#004"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0053",
+    "title": "A production API is rate limited but I only want troubleshooting guidance, not a ticket...",
+    "description": "A production API is rate limited but I only want troubleshooting guidance, not a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "internal_api_rate_limit#003",
+      "internal_api_rate_limit#004",
+      "internal_api_rate_limit#001",
+      "internal_api_rate_limit#002",
+      "internal_api_rate_limit#005",
+      "internal_api_rate_limit#006",
+      "internal_api_rate_limit#007",
+      "api_key_rotation#003"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0054",
+    "title": "TLS Certificate Warning Affecting Production Customers",
+    "description": "A TLS certificate warning is impacting production customers and requires immediate attention to prevent service disruption and maintain security.",
+    "priority": "Urgent",
+    "tags": [
+      "TLS",
+      "certificate",
+      "production",
+      "warning",
+      "security"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0055",
+    "title": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ti...",
+    "description": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ticket, just tell me what escalation would require.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Identity Operations",
+    "evidence_ids": [
+      "sso_login_troubleshooting#005",
+      "slack_access_request#005",
+      "sso_login_troubleshooting#001",
+      "sso_login_troubleshooting#002",
+      "sso_login_troubleshooting#003",
+      "sso_login_troubleshooting#004",
+      "sso_login_troubleshooting#006",
+      "aws_account_access#005"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0056",
+    "title": "A production API is rate limited but I only want troubleshooting guidance, not a ticket...",
+    "description": "A production API is rate limited but I only want troubleshooting guidance, not a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "internal_api_rate_limit#003",
+      "internal_api_rate_limit#001",
+      "internal_api_rate_limit#002",
+      "internal_api_rate_limit#004",
+      "internal_api_rate_limit#005",
+      "internal_api_rate_limit#006",
+      "internal_api_rate_limit#007",
+      "api_key_rotation#003"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0057",
+    "title": "TLS Certificate Warning Affecting Production",
+    "description": "Production customers are experiencing TLS certificate warnings. This is impacting their ability to access services.",
+    "priority": "urgent",
+    "tags": [
+      "TLS",
+      "certificate",
+      "production"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0058",
+    "title": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ti...",
+    "description": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ticket, just tell me what escalation would require.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Identity Operations",
+    "evidence_ids": [
+      "sso_login_troubleshooting#005",
+      "data_pipeline_processing_delay#007",
+      "browser_cache_issue#005",
+      "data_pipeline_processing_delay#003",
+      "data_pipeline_processing_delay#004",
+      "data_pipeline_processing_delay#005",
+      "escalation_policy#002",
+      "data_pipeline_processing_delay#001"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0059",
+    "title": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ti...",
+    "description": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ticket, just tell me what escalation would require.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Identity Operations",
+    "evidence_ids": [
+      "sso_login_troubleshooting#005",
+      "slack_access_request#005",
+      "sso_login_troubleshooting#001",
+      "sso_login_troubleshooting#002",
+      "sso_login_troubleshooting#003",
+      "sso_login_troubleshooting#004",
+      "sso_login_troubleshooting#006",
+      "aws_account_access#005"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0060",
+    "title": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ti...",
+    "description": "I already tried the KB steps for SSO and multiple users are blocked. Do not create a ticket, just tell me what escalation would require.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Identity Operations",
+    "evidence_ids": [
+      "sso_login_troubleshooting#005",
+      "slack_access_request#005",
+      "sso_login_troubleshooting#001",
+      "sso_login_troubleshooting#002",
+      "sso_login_troubleshooting#003",
+      "sso_login_troubleshooting#004",
+      "sso_login_troubleshooting#006",
+      "aws_account_access#005"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0061",
+    "title": "A production API is rate limited but I only want troubleshooting guidance, not a ticket...",
+    "description": "A production API is rate limited but I only want troubleshooting guidance, not a ticket draft.",
+    "priority": "high",
+    "tags": [],
+    "assigned_group": "Platform Engineering",
+    "evidence_ids": [
+      "internal_api_rate_limit#003",
+      "internal_api_rate_limit#001",
+      "internal_api_rate_limit#002",
+      "internal_api_rate_limit#004",
+      "internal_api_rate_limit#005",
+      "internal_api_rate_limit#006",
+      "internal_api_rate_limit#007",
+      "api_key_rotation#003"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0062",
+    "title": "TLS Certificate Warning Affecting Production",
+    "description": "A TLS certificate warning is being reported by production customers, indicating a potential service disruption or security risk.",
+    "priority": "urgent",
+    "tags": [
+      "tls",
+      "certificate",
+      "production"
+    ],
+    "assigned_group": null,
+    "evidence_ids": []
+  },
+  {
+    "draft_id": "DRAFT-0063",
+    "title": "Can you create a ticket draft for that?",
+    "description": "Can you create a ticket draft for that?",
+    "priority": "medium",
+    "tags": [],
+    "assigned_group": null,
+    "evidence_ids": [
+      "container_image_pull_failure#002",
+      "container_image_pull_failure#004",
+      "container_image_pull_failure#001",
+      "container_image_pull_failure#003",
+      "container_image_pull_failure#005",
+      "container_image_pull_failure#006",
+      "production_deployment_rollback#003",
+      "sso_login_troubleshooting#001"
+    ]
+  },
+  {
+    "draft_id": "DRAFT-0064",
+    "title": "SSO Login Issue",
+    "description": "User is unable to log in with Single Sign-On (SSO). Troubleshooting steps attempted include: clearing browser cache/cookies, trying incognito mode, confirming application assignment, verifying MFA enrollment, and checking the identity provider status page. The issue persists.",
+    "priority": "medium",
+    "tags": [
+      "sso"
+    ],
+    "assigned_group": null,
+    "evidence_ids": [
+      "sso_login_troubleshooting#003",
+      "sso_login_troubleshooting#001"
+    ]
+  }
+]
