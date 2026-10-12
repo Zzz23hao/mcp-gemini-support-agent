@@ -1,9 +1,8 @@
 from google.genai import types
 
 
-# 5.2: Gemini function schemas.
-# 这里不真正调用 Gemini API，只定义 model 可以调用哪些 tools、每个 tool
-# 需要什么 arguments。真正的 API call 会在后续 /chat flow 里接入。
+# Gemini function declarations for the tools the model may call. Only the
+# schemas live here; execution happens in main.py.
 
 
 def string_schema(description: str, *, nullable: bool = False) -> types.Schema:
@@ -142,9 +141,8 @@ CREATE_TICKET_DRAFT_DECLARATION = types.FunctionDeclaration(
 )
 
 
-# PDF 5.2 要求暴露给 Gemini 的 tools：
-# search_kb / get_kb_doc / search_tickets / create_ticket_draft。
-# feedback 和 health 留给 system，不让 model 自己调用。
+# Only business tools are exposed to the model. log_feedback and get_health
+# are system-side and never model-callable.
 MCP_TOOL_FUNCTION_DECLARATIONS = [
     SEARCH_KB_DECLARATION,
     GET_KB_DOC_DECLARATION,
@@ -159,5 +157,5 @@ MCP_GEMINI_TOOL = types.Tool(
 
 
 def get_mcp_gemini_tools() -> list[types.Tool]:
-    # GenerateContentConfig(tools=...) 需要 list[Tool]。
+    # GenerateContentConfig(tools=...) expects a list of Tool objects.
     return [MCP_GEMINI_TOOL]

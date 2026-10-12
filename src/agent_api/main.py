@@ -460,9 +460,8 @@ def parse_final_chat_response(
 
 
 def normalize_chat_response_confidence(response: ChatResponse) -> ChatResponse:
-    # Confidence normalization / 置信度兜底：
-    # LLM 有时会把 evidence-supported answer 直接打成 1.0。
-    # 在 support 场景里，KB 命中代表“有依据”，但不代表“绝对确定”。
+    # Models sometimes return 1.0 for any evidence-backed answer. In support, a
+    # KB hit means "supported", not "certain", so cap the reported confidence.
     max_confidence = (
         MAX_SUPPORTED_CONFIDENCE if response.citations else MAX_UNCITED_CONFIDENCE
     )
