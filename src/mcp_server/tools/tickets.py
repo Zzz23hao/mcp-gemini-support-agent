@@ -12,11 +12,6 @@ from src.mcp_server.schemas import (
 )
 
 
-# 当前文件位置：
-# src/mcp_server/tools/tickets.py
-#
-# parents[3] 往上走三层，可以回到项目根目录：
-# tickets.py -> tools -> mcp_server -> src -> project root
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 TICKETS_PATH = PROJECT_ROOT / "data" / "tickets.json"
 TICKET_DRAFTS_PATH = PROJECT_ROOT / "data" / "ticket_drafts.json"
@@ -43,7 +38,7 @@ STOP_WORDS = {
 
 
 def load_tickets() -> list[dict[str, Any]]:
-    # 如果 mock ticket 文件还不存在，返回空结果，和 load_chunks 的容错风格保持一致。
+    # Missing data degrades to empty results, consistent with kb.load_chunks.
     if not TICKETS_PATH.exists():
         return []
 
@@ -94,7 +89,7 @@ def _joined(values: list[str] | str | None) -> str:
 
 
 def score_ticket(query_tokens: list[str], ticket: dict[str, Any]) -> float:
-    # 不同字段代表的主题强度不同：title/tags 最能说明工单主题，所以权重最高。
+    # Title and tags carry the most topical signal, so they weigh the most.
     weighted_fields = [
         (ticket.get("title"), 2.0),
         (ticket.get("tags"), 2.0),
@@ -143,7 +138,7 @@ def create_ticket_draft(
     payload: CreateTicketDraftRequest,
     path: Path = TICKET_DRAFTS_PATH,
 ) -> CreateTicketDraftResponse:
-    # 这个工具只创建本地草稿，不提交到真实工单系统。
+    # Drafts are local records only; nothing is submitted to a real ticketing system.
     drafts = load_ticket_drafts(path)
     draft_id = next_draft_id(drafts)
 
@@ -164,7 +159,7 @@ def create_ticket_draft(
 
 
 def search_tickets(payload: SearchTicketsRequest) -> SearchTicketsResponse:
-    # time_range 先保留在 schema 中，等项目定义具体格式后再实现时间过滤。
+    # time_range is accepted but not applied yet; its format is still undefined.
     query_tokens = tokenize(payload.query)
     if not query_tokens:
         return SearchTicketsResponse(results=[])

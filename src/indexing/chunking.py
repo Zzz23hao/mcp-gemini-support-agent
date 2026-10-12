@@ -5,67 +5,51 @@ from pathlib import Path
 DEFAULT_MIN_CHUNK_TOKENS = 300
 DEFAULT_MAX_CHUNK_TOKENS = 600
 
-# re.compile 会预先创建一个可重复使用的正则规则，避免每次计数都重新解析规则。
-# \w+ 匹配连续的文字/数字；[^\w\s] 匹配既不是文字也不是空白的字符，例如标点。
+# Approximate tokenizer: a run of word characters or a single punctuation mark
+# counts as one token. Good enough for sizing chunks without a model tokenizer.
 TOKEN_PATTERN = re.compile(r"\w+|[^\w\s]", re.UNICODE)
 
-# 这个规则寻找句号、问号或感叹号后的空白，用它作为句子的切分位置。
-# 编译后的 Pattern 可以直接调用 .split(text)，按照规则把文本拆成多个句子。
+# Sentence boundary: whitespace after ASCII or CJK terminal punctuation.
 SENTENCE_BOUNDARY_PATTERN = re.compile(r"(?<=[.!?。！？])(?:[ \t]+|\n+)")
 
 
-def get_doc_id(doc_Path: Path) -> str:
-    #doc_Path: Path doc:Path接收的必须是Path类型的
-    # -> str 返回函数提醒 即return出的必须是str
-    return doc_Path.stem
-    #stem是用来去除文件后缀名的 vpn_set.md 变成vpn_set
+def get_doc_id(path: Path) -> str:
+    return path.stem
 
 
 def split_markdown_sections(markdown_text: str) -> list[tuple[str, str]]:
-    # sections 用来存放切好的段落。
-    # 每个元素是一个二元组：(section 标题, section 正文)
     sections: list[tuple[str, str]] = []
 
-    # 如果文档在第一个 ## 标题前有正文，就先归到 Overview。
+    # Text before the first "## " heading is grouped under "Overview".
     current_heading = "Overview"
-
-    # current_lines 暂存当前 section 的所有正文行。
-    # 直到遇到下一个 ## 标题，才把这些行合并成一个 section。
     current_lines: list[str] = []
 
     for line in markdown_text.splitlines():
-        # # 是整篇文档的大标题，比如 "# VPN Setup"。
-        # 它不适合作为检索 chunk，所以这里跳过。
+        # The document title ("# VPN Setup") is not useful retrieval content.
         if line.startswith("# "):
             continue
 
-        # ## 是我们统一 KB 模板里的 section 标题，
-        # 比如 "## Symptoms"、"## Troubleshooting Steps"。
+        # "## " headings are the section boundaries of the KB template
+        # (Background, Symptoms, Troubleshooting Steps, ...).
         if line.startswith("## "):
-            # 遇到新的 section 前，先把上一个 section 保存下来。
             if current_lines:
                 sections.append((current_heading, "\n".join(current_lines).strip()))
 
-            # 去掉开头的 "## "，只保留干净的标题文本。
             current_heading = line.removeprefix("## ").strip()
             current_lines = []
             continue
 
-        # 普通正文行先攒起来，等 section 结束时再统一保存。
         current_lines.append(line)
 
-    # for 循环结束后，最后一个 section 还没有被保存，
-    # 所以这里要补一次。
     if current_lines:
         sections.append((current_heading, "\n".join(current_lines).strip()))
 
-    # 过滤掉空 section，避免后面生成没有内容的 chunk。
+    # Drop empty sections so they never become empty chunks.
     return [(heading, text) for heading, text in sections if text]
 
 
 def estimate_token_count(text: str) -> int:
     """Estimate tokens without requiring a model-specific tokenizer."""
-    # findall 会返回文本中所有符合 TOKEN_PATTERN 的单词和标点。
     return len(TOKEN_PATTERN.findall(text))
 
 
@@ -108,7 +92,6 @@ def _split_by_words(text: str, max_tokens: int) -> list[str]:
 
 def _split_oversized_block(text: str, max_tokens: int) -> list[str]:
     """Split a large paragraph at sentence boundaries whenever possible."""
-    # 使用上面编译好的句子边界规则拆分，优先保留完整句子。
     sentences = [
         sentence.strip()
         for sentence in SENTENCE_BOUNDARY_PATTERN.split(text)
@@ -127,7 +110,6 @@ def _split_oversized_block(text: str, max_tokens: int) -> list[str]:
 
 def _build_section_units(text: str, max_tokens: int) -> list[str]:
     """Keep paragraphs intact unless one paragraph exceeds the maximum size."""
-    # re.split 会在一个或多个空行处切分文本；\s* 也允许空行中含有空格。
     paragraphs = [
         paragraph.strip()
         for paragraph in re.split(r"\n\s*\n", text)
@@ -214,8 +196,7 @@ def chunk_markdown(
         chunks.append(
             {
                 "doc_id": doc_id,
-                # :03d 表示用 3 位数字补零：
-                # 1 -> 001, 2 -> 002, 方便排序和引用。
+                # Zero-padded so chunk IDs sort correctly (doc#001, doc#002, ...).
                 "chunk_id": f"{doc_id}#{index:03d}",
                 "heading": heading,
                 "text": text,
@@ -226,7 +207,5 @@ def chunk_markdown(
 
 
 def chunk_file(path: Path) -> list[dict]:
-    # 这个函数负责连接“文件系统”和“chunk 逻辑”：
-    # 读取某个 .md 文件 -> 根据文件名生成 doc_id -> 返回 chunks。
     markdown_text = path.read_text(encoding="utf-8")
     return chunk_markdown(get_doc_id(path), markdown_text)

@@ -1,6 +1,5 @@
-# 5.3: Prompt constraints for the Agent API.
-# 这里定义的是 Gemini 的 system instruction。它告诉 model：
-# 什么时候必须查 evidence、如何使用 citations、什么时候创建 ticket draft。
+# System instruction and prompt builders for the Agent API: when the model must
+# retrieve evidence, how it cites, and when it may create a ticket draft.
 
 import json
 from typing import Any
@@ -59,8 +58,7 @@ def build_user_prompt(
     session_id: str,
     conversation_history: str | None = None,
 ) -> str:
-    # 将 /chat request 包装成稳定的 user prompt。
-    # session_id 不用于回答内容本身，但会帮助后续 trace/log/memory。
+    # session_id is included for traceability only; it never influences the answer.
     history_text = conversation_history or "No previous turns for this session."
     return (
         f"session_id: {session_id}\n"
@@ -80,9 +78,9 @@ def build_final_response_prompt(
     tool_results: list[dict[str, Any]],
     conversation_history: str | None = None,
 ) -> str:
-    # Final response prompt / 最终回答阶段：
-    # 这里不再允许 tool calling，只要求 Gemini 基于原始问题和已拿到的 tool evidence
-    # 生成符合 ChatResponse schema 的 JSON。这样可以避免模型忘记 user_query。
+    # Final phase: tools are disabled and Gemini must emit ChatResponse JSON from
+    # the evidence already collected. Restating the original query here keeps the
+    # model anchored to the question rather than to the tool output alone.
     tool_results_json = json.dumps(tool_results, ensure_ascii=False, indent=2)
     history_text = conversation_history or "No previous turns for this session."
     return (

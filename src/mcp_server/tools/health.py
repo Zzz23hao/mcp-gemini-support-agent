@@ -8,11 +8,6 @@ from src.mcp_server.tools.kb import CHUNKS_PATH
 from src.mcp_server.tools.tickets import TICKETS_PATH, TICKET_DRAFTS_PATH
 
 
-# 当前文件位置：
-# src/mcp_server/tools/health.py
-#
-# parents[3] 往上走三层，可以回到项目根目录：
-# health.py -> tools -> mcp_server -> src -> project root
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 PROJECT_VERSION = "0.1.0"
 
@@ -30,7 +25,8 @@ def can_read_json(path: Path) -> bool:
 
 
 def directory_is_writable(path: Path) -> bool:
-    # 对不存在的目标文件，检查父目录是否可写；不要为了 health check 创建真实文件。
+    # For a file that does not exist yet, check its parent directory; a health
+    # check must never create real files.
     directory = path if path.is_dir() else path.parent
     return directory.exists() and directory.is_dir() and bool(directory.stat().st_mode & 0o200)
 

@@ -6,11 +6,6 @@ from typing import Any
 from src.mcp_server.schemas import FeedbackRequest, FeedbackResponse
 
 
-# 当前文件位置：
-# src/mcp_server/tools/feedback.py
-#
-# parents[3] 往上走三层，可以回到项目根目录：
-# feedback.py -> tools -> mcp_server -> src -> project root
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 FEEDBACK_PATH = PROJECT_ROOT / "data" / "feedback.jsonl"
 
@@ -34,6 +29,6 @@ def log_feedback(
     payload: FeedbackRequest,
     path: Path = FEEDBACK_PATH,
 ) -> FeedbackResponse:
-    # feedback 是 append-only event log，一行一条 JSON，方便之后分析。
+    # Append-only JSONL, one event per line, for later analysis.
     append_jsonl(build_feedback_record(payload), path)
     return FeedbackResponse(logged=True)

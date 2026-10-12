@@ -11,9 +11,8 @@ AGENT_TRACE_PATH = PROJECT_ROOT / "data" / "agent_traces.jsonl"
 
 
 def estimate_tokens(text: str) -> int:
-    # Rough token estimate / 粗略 token 估算：
-    # 英文场景里常用约 4 chars ~= 1 token。这里用于 observability，
-    # 不是 billing-grade 精确统计。
+    # Rough estimate (~4 characters per token in English) for observability only;
+    # not billing-grade.
     if not text:
         return 0
     return max(1, len(text) // 4)
@@ -26,8 +25,8 @@ def append_jsonl(record: dict[str, Any], path: Path = AGENT_TRACE_PATH) -> None:
 
 
 def emit_stdout_json(record: dict[str, Any]) -> None:
-    # Observability minimum / 可观测性最低配：
-    # emit one structured JSON event to stdout for each chat turn.
+    # One structured JSON event per chat turn on stdout: the minimum for
+    # log-based observability.
     print(json.dumps(record, ensure_ascii=False), flush=True)
 
 
@@ -82,7 +81,7 @@ def log_agent_trace(
     path: Path = AGENT_TRACE_PATH,
     emit_stdout: bool = True,
 ) -> None:
-    # Agent trace 是 append-only JSONL event log，方便之后做 debugging/eval。
+    # Append-only JSONL so traces can be replayed for debugging and eval.
     record = build_agent_trace_record(
         trace_id=trace_id,
         session_id=session_id,
